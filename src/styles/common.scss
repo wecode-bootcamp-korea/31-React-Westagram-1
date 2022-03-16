@@ -1,1 +1,26 @@
-@import "./reset.scss";
+@import './reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fafafa;
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  input:focus {
+    outline: 0;
+  }
+}

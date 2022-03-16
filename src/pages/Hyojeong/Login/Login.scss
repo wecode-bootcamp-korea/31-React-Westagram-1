@@ -1,0 +1,65 @@
+@import '../variables.scss';
+
+.Login {
+  @include flex-column();
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 500px;
+  padding: 20px;
+  border: 2px solid #e6e6e6;
+  border-radius: $border-radius;
+  background-color: white;
+
+  h1 {
+    flex: 1;
+    margin: 30px 0;
+    font-family: 'Lobster Two', cursive;
+    font-size: 45px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0b3569;
+  }
+
+  .login-form {
+    @include flex-column();
+    flex: 3;
+    width: 100%;
+
+    input {
+      border: 1px solid #efefef;
+      border-radius: $border-radius;
+      font-size: 15px;
+      margin: 3px 10px;
+      height: 35px;
+      padding: 0;
+      text-align: center;
+    }
+
+    input::placeholder {
+      color: #b4b4b4;
+      background-color: $background-color;
+      line-height: 35px;
+      padding-left: 10px;
+      text-align: left;
+    }
+
+    .login-btn {
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 5px;
+      color: white;
+      background-color: $disabled-color;
+      border: 0;
+      outline: 0;
+      margin: 10px;
+      cursor: not-allowed;
+    }
+  }
+  .login-form.active .login-btn {
+    background-color: $activate-color;
+    cursor: pointer;
+  }
+}
