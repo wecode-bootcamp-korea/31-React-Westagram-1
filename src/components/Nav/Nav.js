@@ -4,10 +4,10 @@ const Nav = () => {
   return (
     <div className="Nav">
       <div className="logo">
-        <a href="#" className="logo-icon">
+        <span className="logo-icon">
           <i className="fab fa-instagram" />
-        </a>
-        <span>Instagram</span>
+        </span>
+        <span>Westagram</span>
       </div>
 
       <form className="nav-form">

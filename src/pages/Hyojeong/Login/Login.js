@@ -80,7 +80,7 @@ const Login = () => {
           로그인
         </button>
       </form>
-      <a href="#">비밀번호를 잊으셨나요?</a>
+      <span>비밀번호를 잊으셨나요?</span>
     </div>
   );
 };

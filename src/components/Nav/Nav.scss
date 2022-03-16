@@ -16,11 +16,12 @@
     font-family: 'Lobster Two', cursive;
     font-size: 30px;
 
-    a {
+    .logo-icon {
       border-right: 2px solid black;
       margin-right: 15px;
       padding-right: 15px;
       color: black;
+      cursor: pointer;
     }
 
     span {
