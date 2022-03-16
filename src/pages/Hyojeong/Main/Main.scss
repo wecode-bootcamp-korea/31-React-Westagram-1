@@ -162,10 +162,12 @@
           padding: 15px;
           border: 0;
           font-size: 20px;
+          &::placeholder{
+            color: $gray-color;
+            font-size: 20px;
+          }
         }
-        .comment-input::placeholder {
-          color: $gray-color;
-          font-size: 20px;
+        
         }
         .comment-btn {
           position: absolute;
