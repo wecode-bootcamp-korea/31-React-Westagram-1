@@ -2,7 +2,11 @@ const MainRight = () => {
   return (
     <div className="MainRight">
       <div className="user">
-        <img className="profile big" src="/images/Hyojeong/profile2.JPG" />
+        <img
+          alt="profile"
+          className="profile big"
+          src="/images/Hyojeong/profile2.JPG"
+        />
         <div className="user-info">
           <strong id="user-id">hyodduru</strong>
           <p>김효정</p>
@@ -19,6 +23,7 @@ const MainRight = () => {
         <ul className="users">
           <li className="user">
             <img
+              alt="profile"
               className="profile"
               src="https://images.unsplash.com/photo-1565945887714-d5139f4eb0ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
             />
@@ -29,6 +34,7 @@ const MainRight = () => {
           </li>
           <li className="user">
             <img
+              alt="profile"
               className="profile"
               src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
             />
@@ -50,6 +56,7 @@ const MainRight = () => {
         <ul className="users">
           <li className="user">
             <img
+              alt="profile"
               className="profile"
               src="https://images.unsplash.com/photo-1524601500432-1e1a4c71d692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZnJpZW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1400&q=60"
             />
@@ -61,6 +68,7 @@ const MainRight = () => {
           </li>
           <li className="user">
             <img
+              alt="profile"
               className="profile"
               src="https://images.unsplash.com/photo-1627208753013-8954b7089657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtvcmVhbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60"
             />

@@ -4,6 +4,7 @@ const Feed = () => {
       <div className="feed-bar">
         <div className="profile-box">
           <img
+            alt="profile"
             className="profile"
             src="https://images.unsplash.com/photo-1617294255539-e6e4382ce3c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXNpYW4lMjBzZWxmaWV8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60"
           />
@@ -13,7 +14,7 @@ const Feed = () => {
         <i className="fas fa-ellipsis-h" />
       </div>
       <div className="feed-photo">
-        <img src="/images/Hyojeong/feed.jpg" />
+        <img alt="feed" src="/images/Hyojeong/feed.jpg" />
       </div>
       <div className="feed-btns">
         <button className="feed-heart-btn">
