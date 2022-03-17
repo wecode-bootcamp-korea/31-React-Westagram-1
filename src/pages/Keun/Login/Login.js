@@ -24,7 +24,7 @@ const Login = () => {
       </form>
 
       <footer className="footer">
-        <a>비밀번호를 잊으셨나요?</a>
+        <a onClick={gotoMain}>비밀번호를 잊으셨나요?</a>
       </footer>
     </div>
   );
