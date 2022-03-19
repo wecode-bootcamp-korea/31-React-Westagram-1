@@ -1,6 +1,7 @@
-import './Main.scss';
+import React from 'react';
 import Article from './Article';
 import MainRight from './MainRight';
+import './Main.scss';
 
 const Main = () => {
   return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const MainRight = () => {
   return (
     <div className="MainRight">

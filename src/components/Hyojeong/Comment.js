@@ -1,7 +1,10 @@
+import React from 'react';
+
 const Comment = ({ id, comment, onDelete }) => {
-  const paintBtn = () => {
-    return;
+  const paintBtn = e => {
+    e.target.classList.toggle('fas');
   };
+
   const deleteComment = () => {
     onDelete(id);
   };

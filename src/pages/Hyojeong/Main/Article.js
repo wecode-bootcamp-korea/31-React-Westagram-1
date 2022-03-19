@@ -1,3 +1,4 @@
+import React from 'react';
 import Feed from '../../../components/Hyojeong/Feed';
 
 const Article = () => {
