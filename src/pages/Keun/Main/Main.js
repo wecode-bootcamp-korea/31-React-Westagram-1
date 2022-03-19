@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 
 const Main = () => {
+  let [comment, setComment] = useState(['']);
+
+  const handleCommentInput = e => {
+    setComment(e.target.value);
+  };
+
+  let [commentArray, setCommentArray] = useState(['']);
+  const handleCommentSubmit = e => {
+    e.preventDefault();
+    setCommentArray(commentValue => [...commentValue, comment]);
+    setComment('');
+  };
+
   return (
     <div className="wrap-main">
       <main className="main">
@@ -46,15 +59,21 @@ const Main = () => {
                 <span>그니당</span>님 <span>외 10명</span>이 좋아합니다.
               </div>
               <div className="feedscontent__like-text">
-                <ul className="feedscontent__comment" />
+                <ul className="feedscontent__comment">
+                  {commentArray.map((input, i) => {
+                    return <li key={i}>{input}</li>;
+                  })}
+                </ul>
               </div>
             </div>
-            <form className="feedscomment">
+            <form className="feedscomment" onSubmit={handleCommentSubmit}>
               <input
                 className="feedscomment__input"
                 type="text"
                 placeholder="댓글 달기..."
                 maxLength="50"
+                value={comment}
+                onChange={handleCommentInput}
               />
               <button className="feedscomment__btn">게시</button>
             </form>
