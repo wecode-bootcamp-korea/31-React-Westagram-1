@@ -114,6 +114,11 @@
           position: relative;
           transform: translateX(-15px);
           margin-bottom: 5px;
+          font-size: 18px;
+
+          strong {
+            font-weight: 800;
+          }
         }
 
         .heart-btn,

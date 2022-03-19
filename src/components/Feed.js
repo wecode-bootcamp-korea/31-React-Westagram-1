@@ -1,4 +1,21 @@
+import React, { useState } from 'react';
+
 const Feed = () => {
+  const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState('');
+
+  const submitComment = e => {
+    e.preventDefault();
+    setComments(cur => [comment, ...cur]);
+
+    //clear input
+    setComment('');
+  };
+
+  const onChange = e => {
+    setComment(e.target.value);
+  };
+
   return (
     <div className="Feed">
       <div className="feed-bar">
@@ -35,14 +52,29 @@ const Feed = () => {
         <strong className="profile-id">canon_mj</strong> 날 좋은 하루💙
         <br />
         <div className="scroll">
-          <ul id="comments" className="comments feed-description user-info" />
+          <ul id="comments" className="comments feed-description user-info">
+            {comments.map((comment, i) => {
+              return (
+                <li key={i} className="comment">
+                  <strong>hyodduru</strong> {comment}
+                  <button className="heart-btn">
+                    <i className="far fa-heart" />
+                  </button>
+                  <button className="delete-btn">
+                    <i className="fas fa-times" />
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-        <form className="comment-form">
+        <form className="comment-form" onSubmit={submitComment}>
           <input
+            value={comment}
             type="text"
-            id="comment-input"
             className="comment-input"
             placeholder="댓글 달기..."
+            onChange={onChange}
           />
           <button className="comment-btn">게시</button>
         </form>
