@@ -120,39 +120,39 @@
           strong {
             font-weight: 800;
           }
-        }
 
-        .heart-btn,
-        .delete-btn {
-          position: absolute;
-          border: 0;
-          background-color: transparent;
-          font-size: 22px;
-        }
+          .heart-btn,
+          .delete-btn {
+            position: absolute;
+            border: 0;
+            background-color: transparent;
+            font-size: 22px;
+          }
 
-        .heart-btn {
-          right: 10px;
-          top: 50%;
-          transform: translateY(-50%);
-          color: #bababa;
-        }
+          .heart-btn {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bababa;
 
-        .heart-btn:hover {
-          color: $heart-color;
-        }
+            &:hover {
+              color: $heart-color;
+            }
+          }
 
-        .delete-btn {
-          opacity: 0;
-          right: -20px;
-          top: 50%;
-          transform: translateY(-50%);
-          transition: opacity 0.4s ease;
-          cursor: not-allowed;
-        }
+          .delete-btn {
+            opacity: 0;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity 0.4s ease;
+            cursor: not-allowed;
+          }
 
-        .comment:hover .delete-btn {
-          opacity: 1;
-          cursor: pointer;
+          &:hover .delete-btn {
+            opacity: 1;
+            cursor: pointer;
+          }
         }
       }
 

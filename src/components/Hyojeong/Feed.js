@@ -21,9 +21,13 @@ const Feed = () => {
     if (e.target.value === '') commentForm.current.classList.remove('activate');
   };
 
-  //paint heart btn or bookmark btn in the article-bar
+  //paint heart btn or bookmark btn in the feed-bar
   const paintBtn = e => {
     e.target.classList.toggle('fas');
+  };
+
+  const onDelete = targetId => {
+    setComments(comments => comments.filter((_, i) => targetId !== i));
   };
 
   return (
@@ -64,7 +68,9 @@ const Feed = () => {
         <div className="scroll">
           <ul id="comments" className="comments feed-description user-info">
             {comments.map((comment, i) => {
-              return <Comment key={i} comment={comment} />;
+              return (
+                <Comment key={i} id={i} comment={comment} onDelete={onDelete} />
+              );
             })}
           </ul>
         </div>
