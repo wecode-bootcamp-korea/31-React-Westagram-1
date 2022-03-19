@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Comment from '../components/Comment';
 
 const Feed = () => {
   const [comments, setComments] = useState([]);
@@ -54,17 +55,7 @@ const Feed = () => {
         <div className="scroll">
           <ul id="comments" className="comments feed-description user-info">
             {comments.map((comment, i) => {
-              return (
-                <li key={i} className="comment">
-                  <strong>hyodduru</strong> {comment}
-                  <button className="heart-btn">
-                    <i className="far fa-heart" />
-                  </button>
-                  <button className="delete-btn">
-                    <i className="fas fa-times" />
-                  </button>
-                </li>
-              );
+              return <Comment key={i} comment={comment} />;
             })}
           </ul>
         </div>
