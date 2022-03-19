@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import Comment from '../components/Comment';
+import React, { useState, useRef } from 'react';
+import Comment from './Comment';
 
 const Feed = () => {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
+  const commentForm = useRef();
+  const commentInput = useRef();
 
   const submitComment = e => {
     e.preventDefault();
@@ -13,8 +15,10 @@ const Feed = () => {
     setComment('');
   };
 
-  const onChange = e => {
-    setComment(e.target.value);
+  const activateCommentBtn = e => {
+    setComment(cur => (cur = e.target.value));
+    commentForm.current.classList.add('activate');
+    if (e.target.value === '') commentForm.current.classList.remove('activate');
   };
 
   return (
@@ -59,13 +63,18 @@ const Feed = () => {
             })}
           </ul>
         </div>
-        <form className="comment-form" onSubmit={submitComment}>
+        <form
+          ref={commentForm}
+          className="comment-form"
+          onSubmit={submitComment}
+        >
           <input
+            ref={commentInput}
             value={comment}
             type="text"
             className="comment-input"
             placeholder="댓글 달기..."
-            onChange={onChange}
+            onChange={activateCommentBtn}
           />
           <button className="comment-btn">게시</button>
         </form>
