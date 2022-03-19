@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import FeedTop from './FeedTop';
 import Comment from './Comment';
 
 const Feed = () => {
@@ -10,20 +11,18 @@ const Feed = () => {
     e.preventDefault();
     setComments(cur => [comment, ...cur]);
 
+    //disable the comment-btn when submitted
+    commentForm.current.classList.remove('activate');
+
     //clear input
     setComment('');
   };
 
-  //activate comment-btn when it's input
+  //activate the comment-btn when it's input
   const activateCommentBtn = e => {
     setComment(cur => (cur = e.target.value));
     commentForm.current.classList.add('activate');
     if (e.target.value === '') commentForm.current.classList.remove('activate');
-  };
-
-  //paint heart btn or bookmark btn in the feed-bar
-  const paintBtn = e => {
-    e.target.classList.toggle('fas');
   };
 
   const onDelete = targetId => {
@@ -32,36 +31,7 @@ const Feed = () => {
 
   return (
     <div className="Feed">
-      <div className="feed-bar">
-        <div className="profile-box">
-          <img
-            alt="profile"
-            className="profile"
-            src="https://images.unsplash.com/photo-1617294255539-e6e4382ce3c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXNpYW4lMjBzZWxmaWV8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60"
-          />
-          <strong className="profile-id">canon_mj</strong>
-        </div>
-
-        <i className="fas fa-ellipsis-h" />
-      </div>
-      <div className="feed-photo">
-        <img alt="feed" src="/images/Hyojeong/feed.jpg" />
-      </div>
-      <div className="feed-btns">
-        <button className="feed-heart-btn" onClick={paintBtn}>
-          <i className="far fa-heart" />
-        </button>
-        <button>
-          <i className="far fa-comment" />
-        </button>
-        <button>
-          <i className="fas fa-external-link-alt" />
-        </button>
-        <button className="absolute" onClick={paintBtn}>
-          <i className="far fa-bookmark" />
-        </button>
-      </div>
-
+      <FeedTop />
       <div className="user-info feed-description">
         <strong className="profile-id">canon_mj</strong> 날 좋은 하루💙
         <br />
