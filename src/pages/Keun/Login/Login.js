@@ -16,6 +16,8 @@ const Login = () => {
     pw: '',
   });
 
+  let [isActive, isActiveChange] = useState(false);
+
   const handleIdInput = e => {
     setInputs({ ...inputs, id: e.target.value });
   };
@@ -23,8 +25,14 @@ const Login = () => {
   const handlePwInput = e => {
     setInputs({ ...inputs, pw: e.target.value });
   };
-
   console.log(inputs);
+
+  // 유효성 검토
+  const checkValid = e => {
+    inputs.id.includes('@') && inputs.pw.length >= 5
+      ? isActiveChange(true)
+      : isActiveChange(false);
+  };
 
   return (
     <div className="wrap">
@@ -35,14 +43,20 @@ const Login = () => {
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           onChange={handleIdInput}
+          onKeyUp={checkValid}
         />
         <input
           className="login__pw"
           type="password"
           placeholder="비밀번호"
           onChange={handlePwInput}
+          onKeyUp={checkValid}
         />
-        <button className="login__btn" type="button" onClick={gotoMain}>
+        <button
+          className={isActive ? 'active' : null}
+          type="button"
+          onClick={gotoMain}
+        >
           로그인
         </button>
       </form>
