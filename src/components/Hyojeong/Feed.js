@@ -5,7 +5,6 @@ const Feed = () => {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
   const commentForm = useRef();
-  const commentInput = useRef();
 
   const submitComment = e => {
     e.preventDefault();
@@ -15,10 +14,16 @@ const Feed = () => {
     setComment('');
   };
 
+  //activate comment-btn when it's input
   const activateCommentBtn = e => {
     setComment(cur => (cur = e.target.value));
     commentForm.current.classList.add('activate');
     if (e.target.value === '') commentForm.current.classList.remove('activate');
+  };
+
+  //paint heart btn or bookmark btn in the article-bar
+  const paintBtn = e => {
+    e.target.classList.toggle('fas');
   };
 
   return (
@@ -39,7 +44,7 @@ const Feed = () => {
         <img alt="feed" src="/images/Hyojeong/feed.jpg" />
       </div>
       <div className="feed-btns">
-        <button className="feed-heart-btn">
+        <button className="feed-heart-btn" onClick={paintBtn}>
           <i className="far fa-heart" />
         </button>
         <button>
@@ -48,7 +53,7 @@ const Feed = () => {
         <button>
           <i className="fas fa-external-link-alt" />
         </button>
-        <button className="absolute">
+        <button className="absolute" onClick={paintBtn}>
           <i className="far fa-bookmark" />
         </button>
       </div>
@@ -69,7 +74,6 @@ const Feed = () => {
           onSubmit={submitComment}
         >
           <input
-            ref={commentInput}
             value={comment}
             type="text"
             className="comment-input"
