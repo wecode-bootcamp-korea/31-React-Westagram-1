@@ -155,7 +155,6 @@
 }
 
 @media (max-width: 1600px) {
-  /* nav */
   .Nav {
     padding: 20px 150px;
     transition: all ease 0.4s;
@@ -169,11 +168,15 @@
 }
 
 @media (max-width: 1100px) {
-  .nav-input {
-    width: 200px;
-  }
-  .nav-form i {
-    transform: translateX(-50px);
+  .Nav {
+    .nav-form {
+      .nav-input {
+        width: 200px;
+      }
+      i {
+        transform: translateX(-50px);
+      }
+    }
   }
 }
 
@@ -192,10 +195,9 @@
   }
 }
 
-@media (max-width: 780px) {
-  .Nav {
-    padding: 15px 30px;
-
+@media (max-width: 790px) {
+  div.Nav {
+    padding: 15px 20px;
     .nav-form {
       display: none;
     }

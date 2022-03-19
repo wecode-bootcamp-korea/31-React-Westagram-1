@@ -267,11 +267,6 @@
   .Main {
     width: 85%;
   }
-  /* nav */
-  .Nav {
-    padding: 20px 150px;
-    transition: all ease 0.4s;
-  }
 }
 
 @media (max-width: 1300px) {
@@ -346,5 +341,15 @@
 @media (max-width: 570px) {
   .Main {
     width: 95%;
+    .Article {
+      .Feed {
+        height: 660px;
+        .FeedTop {
+          .feed-photo {
+            height: 400px;
+          }
+        }
+      }
+    }
   }
 }
