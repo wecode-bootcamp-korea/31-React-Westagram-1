@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Main.scss';
+import Comment from '../../../components/Keun/Comment';
 
 const Main = () => {
   let [comment, setComment] = useState(['']);
@@ -61,7 +62,7 @@ const Main = () => {
               <div className="feedscontent__like-text">
                 <ul className="feedscontent__comment">
                   {commentArray.map((input, i) => {
-                    return <li key={i}>{input}</li>;
+                    return <Comment input={input} key={i} />;
                   })}
                 </ul>
               </div>
