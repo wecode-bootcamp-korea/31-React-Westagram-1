@@ -36,7 +36,7 @@ const Feed = () => {
         <strong className="profile-id">canon_mj</strong> 날 좋은 하루💙
         <br />
         <div className="scroll">
-          <ul id="comments" className="comments feed-description user-info">
+          <ul className="comments feed-description user-info">
             {comments.map((comment, i) => {
               return (
                 <Comment key={i} id={i} comment={comment} onDelete={onDelete} />

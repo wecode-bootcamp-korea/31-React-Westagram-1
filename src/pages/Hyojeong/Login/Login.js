@@ -13,7 +13,7 @@ const Login = () => {
 
   // activate login-btn when input id & password
   const activateLoginBtn = () => {
-    loginInfo.id.length <= 3 || loginInfo.password.length <= 5
+    loginInfo.id.length < 3 || loginInfo.password.length < 5
       ? loginForm.current.classList.remove('active')
       : loginForm.current.classList.add('active');
   };
@@ -30,8 +30,9 @@ const Login = () => {
 
     checkValidity();
     if (isValid) {
-      window.confirm('로그인 하시겠습니까?');
-      navigate('../Hyojeong/main', { replace: false });
+      if (window.confirm('로그인 하시겠습니까?')) {
+        navigate('../Hyojeong/main', { replace: false });
+      }
     }
   };
 
@@ -61,7 +62,12 @@ const Login = () => {
   return (
     <div className="Login">
       <h1>Westagram</h1>
-      <form ref={loginForm} className="login-form" onChange={activateLoginBtn}>
+      <form
+        ref={loginForm}
+        className="login-form"
+        onKeyUp={activateLoginBtn}
+        onSubmit={submitLoginInfo}
+      >
         <input
           name="id"
           value={loginInfo.id}
@@ -76,9 +82,7 @@ const Login = () => {
           placeholder="비밀번호"
           onChange={handleLoginInfo}
         />
-        <button className="login-btn" onClick={submitLoginInfo}>
-          로그인
-        </button>
+        <button className="login-btn">로그인</button>
       </form>
       <span>비밀번호를 잊으셨나요?</span>
     </div>
