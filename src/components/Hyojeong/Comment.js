@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Comment = ({ id, comment, onDelete }) => {
-  const paintBtn = e => {
+  const paintHeartBtn = e => {
     e.target.classList.toggle('fas');
   };
 
@@ -12,7 +12,7 @@ const Comment = ({ id, comment, onDelete }) => {
   return (
     <li className="Comment">
       <strong>hyodduru</strong> {comment}
-      <button className="heart-btn" onClick={paintBtn}>
+      <button className="heart-btn" onClick={paintHeartBtn}>
         <i className="far fa-heart" />
       </button>
       <button className="delete-btn" onClick={deleteComment}>

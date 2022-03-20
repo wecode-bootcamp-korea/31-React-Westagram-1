@@ -7,24 +7,27 @@ const Feed = () => {
   const [comment, setComment] = useState('');
   const commentForm = useRef();
 
+  // comment handling - set comments in an array when they are submitted
   const submitComment = e => {
     e.preventDefault();
     setComments(cur => [comment, ...cur]);
 
-    //disable the comment-btn when submitted
-    commentForm.current.classList.remove('activate');
-
-    //clear input
+    //clear comment input
     setComment('');
   };
 
-  //activate the comment-btn when it's input
-  const activateCommentBtn = e => {
+  // comment handling - set comment
+  const handleComment = e => {
     setComment(cur => (cur = e.target.value));
-    commentForm.current.classList.add('activate');
-    if (e.target.value === '') commentForm.current.classList.remove('activate');
   };
 
+  //activate the comment-btn when it's input
+  const activateCommentBtn = () => {
+    commentForm.current.classList.add('activate');
+    if (comment.length === 0) commentForm.current.classList.remove('activate');
+  };
+
+  // comment handling - delete comment
   const onDelete = targetId => {
     setComments(comments => comments.filter((_, i) => targetId !== i));
   };
@@ -48,13 +51,14 @@ const Feed = () => {
           ref={commentForm}
           className="comment-form"
           onSubmit={submitComment}
+          onKeyUp={activateCommentBtn}
         >
           <input
             value={comment}
             type="text"
             className="comment-input"
             placeholder="댓글 달기..."
-            onChange={activateCommentBtn}
+            onChange={handleComment}
           />
           <button className="comment-btn">게시</button>
         </form>
