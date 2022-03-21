@@ -63,8 +63,9 @@ body,
     margin-top: 10px;
     margin-bottom: 120px;
     transition: background-color 0.2s;
-    &:disabled {
+    &.disabled {
       background-color: #c4e1fb;
+      pointer-events: none;
     }
   }
   .anchor-pw-find {

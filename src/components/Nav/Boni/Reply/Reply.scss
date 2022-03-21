@@ -1,0 +1,16 @@
+.reply-item {
+  margin-bottom: 5px;
+  .data-writer-id {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .data-content {
+    display: inline-block;
+    font-size: 13px;
+  }
+  .data-time {
+    font-size: 13px;
+    color: #999;
+  }
+}

@@ -1,6 +1,20 @@
+import { useState } from 'react';
+import Reply from '../../../components/Nav/Boni/Reply/Reply';
 import './Main.scss';
 
 function Main() {
+  const [replyContents, setReplyContents] = useState('');
+  const [postReplyContents, setPostReplyContents] = useState([]);
+  const [isValied, setIsValied] = useState(false);
+
+  const postReply = () => {
+    const replyArr = [...postReplyContents];
+    replyArr.push(replyContents);
+    setPostReplyContents(replyArr);
+    setReplyContents('');
+    setIsValied(false);
+  };
+
   return (
     <main className="lay-main">
       <div className="feeds">
@@ -64,19 +78,36 @@ function Main() {
               </div>
               <button className="button-more">더 보기</button>
             </div>
-            <ul className="reply-list">
-              <li className="reply-item">
-                <div className="reply-group">
-                  <span className="data-writer-id">asdfasf</span>
-                  <span className="data-content">거봐 좋았잖아~</span>
-                </div>
-                <div className="data-time">19분 전</div>
-              </li>
-            </ul>
           </div>
+          <ul className="reply-list">
+            {postReplyContents.map((item, i) => {
+              return <Reply item={item} key={i} />;
+            })}
+          </ul>
           <div className="feed-footer">
-            <input className="input-reply" placeholder="댓글 달기" />
-            <button className="button-reply">게시</button>
+            <input
+              value={replyContents}
+              className="input-reply"
+              placeholder="댓글 달기"
+              onChange={event => {
+                setReplyContents(event.target.value);
+              }}
+              onKeyUp={event => {
+                event.target.value.length > 0
+                  ? setIsValied(true)
+                  : setIsValied(false);
+              }}
+            />
+            <button
+              className={
+                isValied === true
+                  ? 'active button-reply'
+                  : 'disabled button-reply'
+              }
+              onClick={postReply}
+            >
+              게시
+            </button>
           </div>
         </article>
       </div>

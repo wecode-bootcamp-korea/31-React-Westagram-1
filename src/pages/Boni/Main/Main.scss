@@ -148,23 +148,6 @@ button {
   .reply-list {
     padding: 0 10px;
   }
-  .reply-item {
-    margin-bottom: 5px;
-    .data-writer-id {
-      display: inline-block;
-      font-weight: bold;
-      font-size: 13px;
-    }
-    .data-content {
-      display: inline-block;
-      font-size: 13px;
-    }
-    .data-time {
-      font-size: 13px;
-      color: $text-color-sub;
-    }
-  }
-
   .feed-footer {
     display: flex;
     justify-content: space-between;
@@ -182,7 +165,12 @@ button {
       color: #3897f0;
       font-weight: bold;
       transition: opacity 0.2s;
-      &:disabled {
+      &.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      &.disabled {
+        pointer-events: none;
         opacity: 0.5;
       }
     }
