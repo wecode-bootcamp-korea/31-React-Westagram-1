@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import CommentList from './CommentList';
 
-const Feed = ({ feed }) => {
+const Feed = ({ feed, comments, setComments }) => {
   let commentId = useRef(4);
   const commentForm = useRef();
-  const [comments, setComments] = useState([]);
+
   const [comment, setComment] = useState({
     id: commentId.current,
     userName: undefined,
