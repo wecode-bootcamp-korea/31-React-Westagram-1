@@ -16,5 +16,17 @@
     "userName": "jayPark",
     "content": "Hey.",
     "isLiked": false
+  },
+  {
+    "id": 4,
+    "userName": "hydduru",
+    "content": "예쁘다!!!!💚",
+    "isLiked": false
+  },
+  {
+    "id": 5,
+    "userName": "gay20n",
+    "content": "와우 ㅋ.ㅋ",
+    "isLiked": false
   }
 ]

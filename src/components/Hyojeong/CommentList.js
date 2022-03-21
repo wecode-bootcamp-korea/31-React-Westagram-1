@@ -9,7 +9,6 @@ const CommentList = ({ comments, onDelete, setComments }) => {
         setComments(data);
       });
   }, []);
-
   return (
     <div>
       <ul className="comments feed-description user-info">
@@ -23,7 +22,7 @@ const CommentList = ({ comments, onDelete, setComments }) => {
               onDelete={onDelete}
             />
           );
-        })}{' '}
+        })}
       </ul>
       ;
     </div>
