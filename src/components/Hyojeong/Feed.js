@@ -3,10 +3,11 @@ import FeedTop from './FeedTop';
 import Comment from './Comment';
 
 const Feed = () => {
+  let commentId = useRef(0);
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState({
-    id: Math.floor(Math.random()) * 100000,
-    // userName: '',
+    id: commentId.current,
+    userName: undefined,
     content: '',
     isLiked: false,
   });
@@ -24,7 +25,12 @@ const Feed = () => {
 
   // comment handling - set comment
   const handleComment = e => {
-    setComment(cur => ({ ...cur, content: e.target.value }));
+    commentId.current = commentId.current + 1;
+    setComment(cur => ({
+      ...cur,
+      id: commentId.current,
+      content: e.target.value,
+    }));
   };
 
   //activate the comment-btn when it's input
@@ -36,7 +42,9 @@ const Feed = () => {
 
   // comment handling - delete comment
   const onDelete = targetId => {
-    setComments(comments => comments.filter((_, i) => targetId !== i));
+    setComments(comments =>
+      comments.filter(comment => targetId !== comment.id)
+    );
   };
 
   return (
@@ -47,11 +55,11 @@ const Feed = () => {
         <br />
         <div className="scroll">
           <ul className="comments feed-description user-info">
-            {comments.map((comment, i) => {
+            {comments.map(comment => {
               return (
                 <Comment
-                  key={i}
-                  id={i}
+                  key={comment.id}
+                  id={comment.id}
                   comment={comment}
                   userName={comment.userName}
                   onDelete={onDelete}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comment = ({ id, comment, userName = 'hyodduru', onDelete }) => {
+const Comment = ({ id, comment, userName, onDelete }) => {
   const paintHeartBtn = e => {
     e.target.classList.toggle('fas');
   };
