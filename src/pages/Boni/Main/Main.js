@@ -25,6 +25,7 @@ function Main() {
                 <img
                   className="img-profile"
                   src="/images/Boni/profile_01.png"
+                  alt="프로필이미지"
                 />
               </div>
               <div className="info-wrap">
@@ -32,30 +33,30 @@ function Main() {
               </div>
             </div>
             <div className="right-area">
-              <button className="button-option"></button>
+              <button className="button-option" />
             </div>
           </div>
           <div className="feed-body">
             <img
               className="img-feed"
               src="/images/Boni/feed_01.png"
-              alt="feed image"
+              alt="피드이미지"
             />
             <div className="tool-bar">
               <div className="left-area">
                 <button className="button-tool active">
-                  <i className="icon-button icon-button-like"></i>
+                  <i className="icon-button icon-button-like" />
                 </button>
                 <button className="button-tool">
-                  <i className="icon-button icon-button-reply"></i>
+                  <i className="icon-button icon-button-reply" />
                 </button>
                 <button className="button-tool">
-                  <i className="icon-button icon-button-share"></i>
+                  <i className="icon-button icon-button-share" />
                 </button>
               </div>
               <div className="right-area">
                 <button className="button-tool">
-                  <i className="icon-button icon-button-bookmark"></i>
+                  <i className="icon-button icon-button-bookmark" />
                 </button>
               </div>
             </div>
@@ -64,6 +65,7 @@ function Main() {
                 <img
                   src="/images/Boni/profile_01.png"
                   className="img-profile"
+                  alt="프로필이미지"
                 />
               </div>
               <div className="data-follow-id">follower</div>
@@ -117,7 +119,7 @@ function Main() {
             <img
               className="img-profile"
               src="/images/Boni/profile_01.png"
-              alt=""
+              alt="프로필 이미지"
             />
           </div>
           <div className="info-wrap">
@@ -142,6 +144,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -156,7 +159,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -171,7 +174,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -186,7 +189,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -201,7 +204,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -230,7 +233,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -248,7 +251,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -266,7 +269,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -284,7 +287,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -302,7 +305,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -320,7 +323,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -338,7 +341,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
@@ -356,7 +359,7 @@ function Main() {
                     <img
                       src="/images/Boni/profile_01.png"
                       className="img-profile"
-                      alt=""
+                      alt="프로필이미지"
                     />
                   </div>
                   <div className="info-wrap">
