@@ -4,7 +4,13 @@ import Comment from './Comment';
 
 const Feed = () => {
   const [comments, setComments] = useState([]);
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState({
+    id: Math.floor(Math.random()) * 100000,
+    // userName: '',
+    content: '',
+    isLiked: false,
+  });
+
   const commentForm = useRef();
 
   // comment handling - set comments in an array when they are submitted
@@ -13,18 +19,19 @@ const Feed = () => {
     setComments(cur => [comment, ...cur]);
 
     //clear comment input
-    setComment('');
+    setComment(cur => ({ ...cur, content: '' }));
   };
 
   // comment handling - set comment
   const handleComment = e => {
-    setComment(cur => (cur = e.target.value));
+    setComment(cur => ({ ...cur, content: e.target.value }));
   };
 
   //activate the comment-btn when it's input
   const activateCommentBtn = () => {
     commentForm.current.classList.add('activate');
-    if (comment.length === 0) commentForm.current.classList.remove('activate');
+    if (comment.content.length === 0)
+      commentForm.current.classList.remove('activate');
   };
 
   // comment handling - delete comment
@@ -42,7 +49,13 @@ const Feed = () => {
           <ul className="comments feed-description user-info">
             {comments.map((comment, i) => {
               return (
-                <Comment key={i} id={i} comment={comment} onDelete={onDelete} />
+                <Comment
+                  key={i}
+                  id={i}
+                  comment={comment}
+                  userName={comment.userName}
+                  onDelete={onDelete}
+                />
               );
             })}
           </ul>
@@ -54,7 +67,7 @@ const Feed = () => {
           onKeyUp={activateCommentBtn}
         >
           <input
-            value={comment}
+            value={comment.content}
             type="text"
             className="comment-input"
             placeholder="댓글 달기..."
