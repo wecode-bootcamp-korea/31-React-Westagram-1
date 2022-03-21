@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import FeedTop from './FeedTop';
-import Comment from './Comment';
+import CommentList from './CommentList';
 
 const Feed = () => {
-  let commentId = useRef(0);
+  let commentId = useRef(4);
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState({
     id: commentId.current,
@@ -54,19 +54,11 @@ const Feed = () => {
         <strong className="profile-id">canon_mj</strong> 날 좋은 하루💙
         <br />
         <div className="scroll">
-          <ul className="comments feed-description user-info">
-            {comments.map(comment => {
-              return (
-                <Comment
-                  key={comment.id}
-                  id={comment.id}
-                  comment={comment}
-                  userName={comment.userName}
-                  onDelete={onDelete}
-                />
-              );
-            })}
-          </ul>
+          <CommentList
+            comments={comments}
+            onDelete={onDelete}
+            setComments={setComments}
+          />
         </div>
         <form
           ref={commentForm}

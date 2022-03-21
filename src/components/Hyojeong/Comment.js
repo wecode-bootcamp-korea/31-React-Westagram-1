@@ -24,11 +24,6 @@ const Comment = ({ id, comment, userName, onDelete }) => {
 
 export default Comment;
 
-// id: commentsCounter,
-// userName: '',
-// content: '',
-// isLiked: false,
-
 Comment.defaultProps = {
   userName: 'hyodduru',
 };
