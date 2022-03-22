@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Nav.scss';
+// // Show nav - profile menu when clicking the profile icon
+// document.addEventListener("click", (e) => {
+//   const profileIcon = e.target.closest(".profile-icon");
+//   if (profileIcon) profileMenu.classList.toggle("open");
+//   else {
+//     profileMenu.classList.remove("open");
+//   }
+// });
 
 const Nav = () => {
+  const profileMenu = useRef();
+
+  const showProfileIcon = () => {
+    profileMenu.current.classList.toggle('open');
+  };
+
   return (
     <div className="Nav">
       <div className="logo">
@@ -30,12 +44,12 @@ const Nav = () => {
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
           />
         </li>
-        <li className="profile-icon">
+        <li className="profile-icon" onClick={showProfileIcon}>
           <img
             alt="profile-icon"
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
           />
-          <ul className="profile-menu">
+          <ul ref={profileMenu} className="profile-menu">
             <span className="triangle" />
             <li>
               <i className="fas fa-user-circle" /> 프로필
