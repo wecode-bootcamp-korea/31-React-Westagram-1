@@ -58,9 +58,10 @@
       margin: 10px;
       cursor: not-allowed;
     }
-  }
-  .login-form.active .login-btn {
-    background-color: $activate-color;
-    cursor: pointer;
+
+    .login-btn.active {
+      background-color: $activate-color;
+      cursor: pointer;
+    }
   }
 }

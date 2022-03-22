@@ -4,20 +4,14 @@ import { useNavigate } from 'react-router';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [isValid, setValidity] = useState(false);
+
+  const [isValid, setIsValid] = useState(false);
   const [loginInfo, setLoginInfo] = useState({
     id: '',
     password: '',
   });
   const { id, password } = loginInfo;
   const loginForm = useRef();
-
-  // activate login-btn when input id & password
-  const activateLoginBtn = () => {
-    id.length < 3 || password.length < 5
-      ? loginForm.current.classList.remove('active')
-      : loginForm.current.classList.add('active');
-  };
 
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
@@ -30,6 +24,7 @@ const Login = () => {
     if (id.length === 0 || password.length === 0) return;
 
     checkValidity();
+
     if (isValid) {
       if (window.confirm('로그인 하시겠습니까?')) {
         navigate('../Hyojeong/main', { replace: false });
@@ -53,18 +48,13 @@ const Login = () => {
     else if (password.length > 0 && password.length < 5)
       alert('비밀번호는 5자 이상입니다.');
     else if (password.length > 20) alert('비밀번호는 20자 미만입니다.');
-    else setValidity(true);
+    else setIsValid(true);
   };
 
   return (
     <div className="Login">
       <h1>Westagram</h1>
-      <form
-        ref={loginForm}
-        className="login-form"
-        onKeyUp={activateLoginBtn}
-        onSubmit={submitLoginInfo}
-      >
+      <form ref={loginForm} className="login-form" onSubmit={submitLoginInfo}>
         <input
           name="id"
           value={id}
@@ -79,7 +69,15 @@ const Login = () => {
           placeholder="비밀번호"
           onChange={handleLoginInfo}
         />
-        <button className="login-btn">로그인</button>
+        <button
+          className={
+            id.length < 3 || password.length < 5
+              ? 'login-btn'
+              : 'login-btn active'
+          }
+        >
+          로그인
+        </button>
       </form>
       <span>비밀번호를 잊으셨나요?</span>
     </div>
