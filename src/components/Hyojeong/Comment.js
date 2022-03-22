@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comment = ({ id, comment, userName, onDelete }) => {
+const Comment = ({ id, content, userName, onDelete }) => {
   const paintHeartBtn = e => {
     e.target.classList.toggle('fas');
   };
@@ -11,7 +11,7 @@ const Comment = ({ id, comment, userName, onDelete }) => {
 
   return (
     <li className="Comment">
-      <strong>{userName}</strong> {comment.content}
+      <strong>{userName}</strong> {content}
       <button className="heart-btn" onClick={paintHeartBtn}>
         <i className="far fa-heart" />
       </button>

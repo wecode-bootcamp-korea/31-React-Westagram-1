@@ -1,7 +1,7 @@
 import React from 'react';
 import Comment from './Comment';
 
-const CommentList = ({ comments, onDelete, setComments }) => {
+const CommentList = ({ comments, onDelete }) => {
   return (
     <div>
       <ul className="comments feed-description user-info">
@@ -10,7 +10,7 @@ const CommentList = ({ comments, onDelete, setComments }) => {
             <Comment
               key={comment.id}
               id={comment.id}
-              comment={comment}
+              content={comment.content}
               userName={comment.userName}
               onDelete={onDelete}
             />

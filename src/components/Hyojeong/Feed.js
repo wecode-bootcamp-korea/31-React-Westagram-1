@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import CommentList from './CommentList';
 
-const Feed = ({ feed, comments, setComments }) => {
+const Feed = ({ feed }) => {
   let commentId = useRef(4);
   const commentForm = useRef();
 
+  const [comments, setComments] = useState([...feed.comments]);
   const [comment, setComment] = useState({
     id: commentId.current,
     userName: undefined,
     content: '',
-    isLiked: false,
   });
 
   // comment handling - set comments in an array when they are submitted
@@ -82,11 +82,7 @@ const Feed = ({ feed, comments, setComments }) => {
         <strong className="profile-id">{feed.userName}</strong> {feed.content}
         <br />
         <div className="scroll">
-          <CommentList
-            comments={comments}
-            onDelete={onDelete}
-            setComments={setComments}
-          />
+          <CommentList comments={comments} onDelete={onDelete} />
         </div>
         <form
           ref={commentForm}
