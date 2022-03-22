@@ -15,7 +15,8 @@ const Login = () => {
 
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
-    setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setLoginInfo({ ...loginInfo, [name]: value });
   };
 
   // Login Handling - go to the main page when logged in
