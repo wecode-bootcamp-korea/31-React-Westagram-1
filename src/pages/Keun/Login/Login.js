@@ -15,19 +15,18 @@ const Login = () => {
     id: '',
     pw: '',
   });
+  const handleInputs = e => {
+    const { name, value } = e.target;
 
-  let [isActive, isActiveChange] = useState(false);
-
-  const handleIdInput = e => {
-    setInputs({ ...inputs, id: e.target.value });
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
   };
-
-  const handlePwInput = e => {
-    setInputs({ ...inputs, pw: e.target.value });
-  };
-  console.log(inputs);
 
   // 유효성 검토
+  let [isActive, isActiveChange] = useState(false);
+
   const checkValid = e => {
     inputs.id.includes('@') && inputs.pw.length >= 5
       ? isActiveChange(true)
@@ -40,17 +39,21 @@ const Login = () => {
       <form className="login__form">
         <input
           className="login__email"
+          name="id"
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
-          onChange={handleIdInput}
+          onChange={handleInputs}
           onKeyUp={checkValid}
+          value={inputs.id}
         />
         <input
           className="login__pw"
+          name="pw"
           type="password"
           placeholder="비밀번호"
-          onChange={handlePwInput}
+          onChange={handleInputs}
           onKeyUp={checkValid}
+          value={inputs.pw}
         />
         <button
           className={isActive ? 'active' : null}
