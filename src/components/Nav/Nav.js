@@ -1,13 +1,5 @@
 import React, { useRef } from 'react';
 import './Nav.scss';
-// // Show nav - profile menu when clicking the profile icon
-// document.addEventListener("click", (e) => {
-//   const profileIcon = e.target.closest(".profile-icon");
-//   if (profileIcon) profileMenu.classList.toggle("open");
-//   else {
-//     profileMenu.classList.remove("open");
-//   }
-// });
 
 const Nav = () => {
   const profileMenu = useRef();
