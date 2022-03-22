@@ -32,13 +32,6 @@ const Feed = ({ feed }) => {
     }));
   };
 
-  //activate the comment-btn when it's input
-  const activateCommentBtn = () => {
-    commentForm.current.classList.add('activate');
-    if (comment.content.length === 0)
-      commentForm.current.classList.remove('activate');
-  };
-
   // comment handling - delete comment
   const onDelete = targetId => {
     setComments(comments =>
@@ -89,7 +82,6 @@ const Feed = ({ feed }) => {
           ref={commentForm}
           className="comment-form"
           onSubmit={submitComment}
-          onKeyUp={activateCommentBtn}
         >
           <input
             value={comment.content}
@@ -98,7 +90,15 @@ const Feed = ({ feed }) => {
             placeholder="댓글 달기..."
             onChange={handleComment}
           />
-          <button className="comment-btn">게시</button>
+          <button
+            className={
+              comment.content.length === 0
+                ? 'comment-btn'
+                : 'comment-btn activate'
+            }
+          >
+            게시
+          </button>
         </form>
       </div>
     </div>

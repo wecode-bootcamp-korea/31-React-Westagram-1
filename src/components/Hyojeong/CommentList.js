@@ -4,7 +4,7 @@ import Comment from './Comment';
 const CommentList = ({ comments, onDelete }) => {
   return (
     <div>
-      <ul className="comments feed-description user-info">
+      <ul className="CommentList feed-description user-info">
         {comments.map(comment => {
           const { id, userName, content } = comment;
           return (

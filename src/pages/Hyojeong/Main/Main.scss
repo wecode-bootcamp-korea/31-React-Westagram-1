@@ -102,12 +102,13 @@
         text-align: left;
       }
 
-      .comments {
+      /* CommentList Component */
+      .CommentList {
         flex: 2;
         height: 65px;
         overflow-y: auto;
 
-        // Comment Component
+        /* Comment Component */
         .Comment {
           position: relative;
           transform: translateX(-15px);
@@ -182,7 +183,7 @@
         cursor: not-allowed;
       }
 
-      .comment-form.activate .comment-btn {
+      .comment-btn.activate {
         color: $activate-color;
         cursor: pointer;
       }
