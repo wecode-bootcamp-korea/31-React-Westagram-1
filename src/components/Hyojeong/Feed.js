@@ -2,10 +2,11 @@ import React, { useState, useRef } from 'react';
 import CommentList from './CommentList';
 
 const Feed = ({ feed }) => {
+  const { userProfileImg, userName, content, thumbnail, commentList } = feed;
   let commentId = useRef(4);
   const commentForm = useRef();
 
-  const [comments, setComments] = useState([...feed.comments]);
+  const [comments, setComments] = useState([...commentList]);
   const [comment, setComment] = useState({
     id: commentId.current,
     userName: undefined,
@@ -54,14 +55,14 @@ const Feed = ({ feed }) => {
     <div className="Feed">
       <div className="feed-bar">
         <div className="profile-box">
-          <img alt="profile" className="profile" src={feed.userProfileImg} />
-          <strong className="profile-id">{feed.userName}</strong>
+          <img alt="profile" className="profile" src={userProfileImg} />
+          <strong className="profile-id">{userName}</strong>
         </div>
 
         <i className="fas fa-ellipsis-h" />
       </div>
       <div className="feed-photo">
-        <img alt="feed" src={feed.thumbnail} />
+        <img alt="feed" src={thumbnail} />
       </div>
       <div className="feed-btns">
         <button className="feed-heart-btn" onClick={paintBtn}>
@@ -79,7 +80,7 @@ const Feed = ({ feed }) => {
       </div>
 
       <div className="user-info feed-description">
-        <strong className="profile-id">{feed.userName}</strong> {feed.content}
+        <strong className="profile-id">{userName}</strong> {content}
         <br />
         <div className="scroll">
           <CommentList comments={comments} onDelete={onDelete} />

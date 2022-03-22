@@ -9,11 +9,12 @@ const Login = () => {
     id: '',
     password: '',
   });
+  const { id, password } = loginInfo;
   const loginForm = useRef();
 
   // activate login-btn when input id & password
   const activateLoginBtn = () => {
-    loginInfo.id.length < 3 || loginInfo.password.length < 5
+    id.length < 3 || password.length < 5
       ? loginForm.current.classList.remove('active')
       : loginForm.current.classList.add('active');
   };
@@ -26,7 +27,7 @@ const Login = () => {
   // Login Handling - go to the main page when logged in
   const submitLoginInfo = e => {
     e.preventDefault();
-    if (loginInfo.id.length === 0 || loginInfo.password.length === 0) return;
+    if (id.length === 0 || password.length === 0) return;
 
     checkValidity();
     if (isValid) {
@@ -40,22 +41,18 @@ const Login = () => {
   const checkValidity = () => {
     const korCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g;
     const spcCheck = /[~!#$%^&*();_+|<>?:{}]/g;
-    if (loginInfo.id === null || loginInfo.id === '')
-      alert('아이디 입력은 필수입니다.');
-    else if (spcCheck.test(loginInfo.id))
-      alert('적합한 아이디 형식이 아닙니다.');
-    else if (korCheck.test(loginInfo.id)) alert('영문으로 입력해주세요.');
-    else if (loginInfo.id.length > 0 && loginInfo.id.length < 3)
-      alert('아이디는 3자 이상입니다.');
-    else if (loginInfo.id.length > 15) alert('15자 이내로 입력해주세요.');
-    else if (loginInfo.id.search(/\s/) !== -1)
+    if (id === null || id === '') alert('아이디 입력은 필수입니다.');
+    else if (spcCheck.test(id)) alert('적합한 아이디 형식이 아닙니다.');
+    else if (korCheck.test(id)) alert('영문으로 입력해주세요.');
+    else if (id.length > 0 && id.length < 3) alert('아이디는 3자 이상입니다.');
+    else if (id.length > 15) alert('15자 이내로 입력해주세요.');
+    else if (id.search(/\s/) !== -1)
       alert('아이디는 빈 칸을 포함 할 수 없습니다.');
-    else if (loginInfo.password === null || loginInfo.password === '')
+    else if (password === null || password === '')
       alert('비밀번호 입력은 필수입니다.');
-    else if (loginInfo.password.length > 0 && loginInfo.password.length < 5)
+    else if (password.length > 0 && password.length < 5)
       alert('비밀번호는 5자 이상입니다.');
-    else if (loginInfo.password.length > 20)
-      alert('비밀번호는 20자 미만입니다.');
+    else if (password.length > 20) alert('비밀번호는 20자 미만입니다.');
     else setValidity(true);
   };
 
@@ -70,14 +67,14 @@ const Login = () => {
       >
         <input
           name="id"
-          value={loginInfo.id}
+          value={id}
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           onChange={handleLoginInfo}
         />
         <input
           name="password"
-          value={loginInfo.password}
+          value={password}
           type="password"
           placeholder="비밀번호"
           onChange={handleLoginInfo}

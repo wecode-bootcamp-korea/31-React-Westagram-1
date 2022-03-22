@@ -6,12 +6,13 @@ const CommentList = ({ comments, onDelete }) => {
     <div>
       <ul className="comments feed-description user-info">
         {comments.map(comment => {
+          const { id, userName, content } = comment;
           return (
             <Comment
-              key={comment.id}
-              id={comment.id}
-              content={comment.content}
-              userName={comment.userName}
+              key={id}
+              id={id}
+              userName={userName}
+              content={content}
               onDelete={onDelete}
             />
           );
