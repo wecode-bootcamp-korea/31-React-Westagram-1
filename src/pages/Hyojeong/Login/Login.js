@@ -3,15 +3,14 @@ import { useNavigate } from 'react-router';
 import './Login.scss';
 
 const Login = () => {
-  const navigate = useNavigate();
-
-  const [isValid, setIsValid] = useState(false);
+  let isValid = false;
   const [loginInfo, setLoginInfo] = useState({
     id: '',
     password: '',
   });
   const { id, password } = loginInfo;
   const loginForm = useRef();
+  const navigate = useNavigate();
 
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
@@ -49,7 +48,7 @@ const Login = () => {
     else if (password.length > 0 && password.length < 5)
       alert('비밀번호는 5자 이상입니다.');
     else if (password.length > 20) alert('비밀번호는 20자 미만입니다.');
-    else setIsValid(true);
+    else isValid = true;
   };
 
   return (
