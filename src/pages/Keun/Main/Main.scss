@@ -294,13 +294,13 @@
 
   .main-right__otherstory {
     padding: 0px 40px 10px 10px;
-  }
 
-  .main-right__img > img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-left: 3px;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-left: 3px;
+    }
   }
 
   .main-right__img--xl > img {
@@ -349,6 +349,8 @@
   .main-right__recommend {
     border: 2px solid rgba(0, 0, 0, 0.1);
     margin-top: 15px;
+
+    padding-bottom: 10px;
   }
 
   .main-right__recommend > .main-right__title {
@@ -363,10 +365,6 @@
   .main-right__otherstory--follow {
     padding: 0;
     padding: 10px 0px 0px 10px;
-
-    & :last-child {
-      padding-bottom: 10px;
-    }
   }
 
   .main-right__follow {

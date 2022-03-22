@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './Main.scss';
 import Comment from '../../../components/Keun/Comment';
+import OtherStory from './other-story';
+import { INFO_LIST } from './other-storyData';
+import RocoStory from './reco-story';
+import { REFO_LIST } from './reco-storyData';
+import Reco from './reco-story';
 
 const Main = () => {
   let [comment, setComment] = useState(['']);
@@ -100,42 +105,16 @@ const Main = () => {
               <h3>스토리</h3>
               <h3>모두 보기</h3>
             </div>
-            <div className="main-right__otherstory">
-              <div className="main-right__img">
-                <img
-                  alt="story-picture"
-                  src="https://avatars.githubusercontent.com/u/56650238?v=4"
+
+            {INFO_LIST.map(info => {
+              return (
+                <OtherStory
+                  key={info.id}
+                  infoName={info.name}
+                  infoTime={info.time}
                 />
-              </div>
-              <div className="main-right__text">
-                <h3>wecode_bootcamp</h3>
-                <h3>16분 전</h3>
-              </div>
-            </div>
-            <div className="main-right__otherstory">
-              <div className="main-right__img">
-                <img
-                  alt="story-picture"
-                  src="https://avatars.githubusercontent.com/u/56650238?v=4"
-                />
-              </div>
-              <div className="main-right__text">
-                <h3>wecode_bootcamp</h3>
-                <h3>16분 전</h3>
-              </div>
-            </div>
-            <div className="main-right__otherstory">
-              <div className="main-right__img">
-                <img
-                  alt="story-picture"
-                  src="https://avatars.githubusercontent.com/u/56650238?v=4"
-                />
-              </div>
-              <div className="main-right__text">
-                <h3>wecode_bootcamp</h3>
-                <h3>16분 전</h3>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
           <div className="main-right__recommend">
@@ -143,51 +122,15 @@ const Main = () => {
               <h3>회원님을 위한 추천</h3>
               <h3>모두 보기</h3>
             </div>
-            <div className="main-right__otherstory main-right__otherstory--follow">
-              <div className="main-right__img">
-                <img
-                  alt="recommend-picture"
-                  src="https://avatars.githubusercontent.com/u/56650238?v=4"
+            {REFO_LIST.map(reco => {
+              return (
+                <RocoStory
+                  key={reco.id}
+                  recoName={reco.name}
+                  recoFri={reco.fri}
                 />
-              </div>
-              <div className="main-right__text">
-                <h3>wecode_bootcamp</h3>
-                <h3>_legend_a님 외 2명이 ...</h3>
-              </div>
-              <div className="main-right__follow">
-                <h3>팔로우</h3>
-              </div>
-            </div>
-            <div className="main-right__otherstory main-right__otherstory--follow">
-              <div className="main-right__img">
-                <img
-                  alt="recommend-picture"
-                  src="https://avatars.githubusercontent.com/u/56650238?v=4"
-                />
-              </div>
-              <div className="main-right__text">
-                <h3>wecode_bootcamp</h3>
-                <h3>_legend_a님 외 2명이 ...</h3>
-              </div>
-              <div className="main-right__follow">
-                <h3>팔로우</h3>
-              </div>
-            </div>
-            <div className="main-right__otherstory main-right__otherstory--follow">
-              <div className="main-right__img">
-                <img
-                  alt="recommend-picture"
-                  src="https://avatars.githubusercontent.com/u/56650238?v=4"
-                />
-              </div>
-              <div className="main-right__text">
-                <h3>wecode_bootcamp</h3>
-                <h3>_legend_a님 외 2명이 ...</h3>
-              </div>
-              <div className="main-right__follow">
-                <h3>팔로우</h3>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </main>
       </main>
