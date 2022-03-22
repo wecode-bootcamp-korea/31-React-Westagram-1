@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
@@ -65,7 +65,7 @@ const Login = () => {
       </form>
 
       <footer className="footer">
-        <a>비밀번호를 잊으셨나요?</a>
+        <Link to="/">비밀번호를 잊으셨나요?</Link>
       </footer>
     </div>
   );
