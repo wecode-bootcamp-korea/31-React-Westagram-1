@@ -12,13 +12,15 @@ const Main = () => {
   let [commentArray, setCommentArray] = useState(['']);
   const handleCommentSubmit = e => {
     e.preventDefault();
-    setCommentArray(commentValue => [...commentValue, comment]);
+    setCommentArray(commentValue => {
+      return [...commentValue, comment];
+    });
     setComment('');
   };
 
   return (
-    <div className="wrap-main">
-      <main className="main">
+    <div className="main">
+      <main className="main-wrap">
         <div className="feeds">
           <article className="feedscontent">
             <div className="feedscontent__profile">

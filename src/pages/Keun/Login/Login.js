@@ -35,9 +35,9 @@ const Login = () => {
   };
 
   return (
-    <div className="wrap">
+    <div className="login">
       <div className="logo">westagram</div>
-      <form className="login">
+      <form className="login__form">
         <input
           className="login__email"
           type="text"
