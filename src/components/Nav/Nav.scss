@@ -68,12 +68,32 @@
       z-index: 2;
 
       .user {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        cursor: pointer;
         width: inherit;
         margin: 0;
-        padding: 7px;
-        border-bottom: 2px solid var(--border-color);
-        border-left: 2px solid var(--border-color);
-        border-right: 2px solid var(--border-color);
+
+        border-bottom: 2px solid $border-color;
+        border-left: 2px solid $border-color;
+        border-right: 2px solid $border-color;
+
+        strong {
+          font-weight: 800;
+          font-size: 20px;
+        }
+        p {
+          margin-top: 3px;
+          font-size: 20px;
+          color: $gray-color;
+        }
+        .profile {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
       }
 
       .user:last-child {
@@ -140,7 +160,7 @@
           width: 0;
           height: 0;
           border: 10x;
-          border-bottom: 15px solid var(--border-color);
+          border-bottom: 15px solid $border-color;
           border-top: 15px solid transparent;
           border-left: 15px solid transparent;
           border-right: 15px solid transparent;

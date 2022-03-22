@@ -1,8 +1,30 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './Nav.scss';
 
 const Nav = () => {
+  const [state, setState] = useState({
+    users: [],
+    filteredUsers: [],
+    term: '',
+  });
+  const { users, filteredUsers, term } = state;
   const profileMenu = useRef();
+  useEffect(() => {
+    fetch('http://localhost:3000/data/usersData.json')
+      .then(res => res.json())
+      .then(data => setState({ ...state, users: data }));
+  }, []);
+
+  const handleState = e => {
+    const { value, name } = e.target;
+    // filtered : filtered array - search user's id
+    const filtered = users.filter(user => user.id.includes(value));
+    setState({
+      ...state,
+      [name]: value,
+      filteredUsers: value === '' ? [] : filtered,
+    });
+  };
 
   const showProfileIcon = () => {
     profileMenu.current.classList.toggle('open');
@@ -18,9 +40,29 @@ const Nav = () => {
       </div>
 
       <form className="nav-form">
-        <input className="nav-input" type="text" placeholder="검색" />
+        <input
+          name="term"
+          value={term}
+          className="nav-input"
+          type="text"
+          placeholder="검색"
+          onChange={handleState}
+        />
         <i className="fas fa-search" />
-        <ul className="users search-info" />
+        <ul className="users search-info">
+          {filteredUsers.map((user, i) => {
+            const { img, id, name } = user;
+            return (
+              <li key={i} className="user">
+                <img className="profile" src={img} alt="profile" />
+                <div className="user-info">
+                  <strong>{id}</strong>
+                  <p>{name}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </form>
 
       <ul className="menu-container">
