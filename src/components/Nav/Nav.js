@@ -48,7 +48,11 @@ const Nav = () => {
           placeholder="검색"
           onChange={handleState}
         />
-        <i className="fas fa-search" />
+        <i
+          className={
+            term.length > 0 ? 'fas fa-search activate' : 'fas fa-search'
+          }
+        />
         <ul className="users search-info">
           {filteredUsers.map((user, i) => {
             const { img, id, name } = user;
@@ -94,7 +98,7 @@ const Nav = () => {
             <li>
               <i className="fas fa-cog" /> 설정
             </li>
-            <li id="logout-btn">로그아웃</li>
+            <li>로그아웃</li>
           </ul>
         </li>
       </ul>
