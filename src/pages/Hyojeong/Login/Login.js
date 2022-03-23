@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 import './Login.scss';
 
 const Login = () => {
-  let isValid = false;
   const [loginInfo, setLoginInfo] = useState({
     id: '',
     password: '',
@@ -32,38 +31,16 @@ const Login = () => {
     })
       .then(response => response.json())
       .then(result => {
-        if (result.access_token) {
+        if (result.message === 'fail') alert(`Error : ${result.message} 발생`);
+        if (result.message === 'success' && result.access_token) {
           localStorage.setItem('wtw-token', result.access_token);
 
-          checkValidity();
-
-          if (isValid) {
-            if (window.confirm('로그인 하시겠습니까?')) {
-              navigate('../Hyojeong/main', { replace: false });
-            }
+          if (window.confirm('로그인 하시겠습니까?')) {
+            navigate('../Hyojeong/main', { replace: false });
           }
         }
       })
       .catch(alert('네트워크 오류입니다.'));
-  };
-
-  //id & pass validation
-  const checkValidity = () => {
-    const korCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g;
-    const spcCheck = /[~!#$%^&*();_+|<>?:{}]/g;
-    if (id === null || id === '') alert('아이디 입력은 필수입니다.');
-    else if (spcCheck.test(id)) alert('적합한 아이디 형식이 아닙니다.');
-    else if (korCheck.test(id)) alert('영문으로 입력해주세요.');
-    else if (id.length > 0 && id.length < 3) alert('아이디는 3자 이상입니다.');
-    else if (id.length > 15) alert('15자 이내로 입력해주세요.');
-    else if (id.search(/\s/) !== -1)
-      alert('아이디는 빈 칸을 포함 할 수 없습니다.');
-    else if (password === null || password === '')
-      alert('비밀번호 입력은 필수입니다.');
-    else if (password.length > 0 && password.length < 5)
-      alert('비밀번호는 5자 이상입니다.');
-    else if (password.length > 20) alert('비밀번호는 20자 미만입니다.');
-    else isValid = true;
   };
 
   return (
