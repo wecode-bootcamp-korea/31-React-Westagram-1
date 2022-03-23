@@ -1,46 +1,69 @@
 import React, { useState } from 'react';
-import styles from './Login.scss';
+import { useNavigate } from 'react-router-dom';
+import './Login.scss';
 //import { Link, useNavigate } from "react-router-dom"
 
 const Login = () => {
-  const [id, setId] = useState('');
-  const [passWord, setPassWord] = useState();
-  console.log(id);
-  console.log(passWord);
+  const [inputValues, setinputValues] = useState({
+    id: '',
+    password: '',
+  });
+
+  const navigate = useNavigate();
+
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setinputValues({
+      ...inputValues,
+      [name]: value,
+    });
+  };
+
+  const handleEnterInput = e => {
+    if (e.key === 'Enter') {
+      navigate('Noh/Main');
+    }
+  };
+
+  const isValid =
+    inputValues.id.includes('@') && inputValues.password.length >= 5
+      ? true
+      : false;
+
+  // const goToMain = Navigate('Noh/Main')
 
   return (
-    <div className="borderBox">
+    <div className="login">
       <h1 className="header_Login">westagram</h1>
-      <main className="loginbox">
+      <main className="mainLoginBox">
         <div className="loginBox">
           <input
-            onChange={e => {
-              setId(e.target.value);
-            }}
-            value={id}
+            onChange={handleInput}
+            name="id"
             className="id"
             type="text"
             placeholder="전화번호,사용자 이름 또는 이메일"
           />
           <input
-            onChange={e => {
-              setPassWord(e.target.value);
-            }}
-            value={passWord}
+            onChange={handleInput}
+            name="password"
             className="passWord"
             type="password"
             placeholder="비밀번호를 입려하세요"
           />
-          <button class="loginButton" disabled="true">
+          <button
+            className={isValid ? 'activebtn' : 'unactivebtn'}
+            disabled={!isValid}
+            onKeyPress={handleEnterInput}
+          >
             로그인
           </button>
-          <a href="#">비밀번호를 잊으셨나요?</a>
-          {/* <Link to='/main'>메인으로 이동</Link> */}
         </div>
       </main>
     </div>
   );
-  console.log(id);
 };
 
 export default Login;
+
+// onClick={goToMain
