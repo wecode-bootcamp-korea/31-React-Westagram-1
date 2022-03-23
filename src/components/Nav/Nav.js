@@ -13,7 +13,7 @@ const Nav = () => {
   useEffect(() => {
     fetch('http://localhost:3000/data/usersData.json')
       .then(res => res.json())
-      .then(data => setState({ ...state, users: data }));
+      .then(data => setState(state => (state = { ...state, users: data })));
   }, []);
 
   const handleState = e => {
