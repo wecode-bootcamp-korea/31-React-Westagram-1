@@ -11,7 +11,6 @@ const Login = () => {
   const { id, password } = loginInfo;
   const loginForm = useRef();
   const navigate = useNavigate();
-
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
     const { name, value } = e.target;
@@ -23,13 +22,29 @@ const Login = () => {
     e.preventDefault();
     if (id.length === 0 || password.length === 0) return;
 
-    checkValidity();
+    // get user's info
+    fetch('http://10.58.2.11:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.access_token) {
+          localStorage.setItem('wtw-token', result.access_token);
 
-    if (isValid) {
-      if (window.confirm('로그인 하시겠습니까?')) {
-        navigate('../Hyojeong/main', { replace: false });
-      }
-    }
+          checkValidity();
+
+          if (isValid) {
+            if (window.confirm('로그인 하시겠습니까?')) {
+              navigate('../Hyojeong/main', { replace: false });
+            }
+          }
+        }
+      })
+      .catch(alert('네트워크 오류입니다.'));
   };
 
   //id & pass validation

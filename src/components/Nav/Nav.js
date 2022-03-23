@@ -9,6 +9,7 @@ const Nav = () => {
   });
   const { users, filteredUsers, term } = state;
   const profileMenu = useRef();
+
   useEffect(() => {
     fetch('http://localhost:3000/data/usersData.json')
       .then(res => res.json())
