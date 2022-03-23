@@ -3,9 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
-  const navigate = useNavigate();
-
   //로그인 인증 인가 전 경로
+  // const navigate = useNavigate();
   // navigate('../Keun/Main');
 
   //로그인 input 값 받기 -> 객체로 구현
@@ -45,6 +44,7 @@ const Login = () => {
         console.log('결과: ', result);
       });
   };
+
   return (
     <div className="login">
       <div className="logo">westagram</div>

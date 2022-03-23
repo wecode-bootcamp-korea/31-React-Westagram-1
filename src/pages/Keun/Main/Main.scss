@@ -121,6 +121,8 @@
     left: 30%;
     transform: translate(-30%, 0);
     border: none;
+    display: flex;
+    flex-direction: column;
   }
 
   .feedscontent {
@@ -131,6 +133,7 @@
     top: 0;
     border: 2px solid rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+    margin-bottom: 20px;
   }
 
   .feedscontent__profile {
