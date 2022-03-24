@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.login {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .header_Login {
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+  }
+
+  .mainLoginBox {
+    border-radius: 8px;
+    width: 310px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .loginBox {
+      border-radius: 8px;
+      width: 310px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .id {
+        height: 30px;
+        margin-top: 20px;
+        border-radius: 8px;
+        border: 1px solid #dbdbdb;
+        padding-left: 6px;
+        background-color: #fafafa;
+      }
+
+      .passWord {
+        height: 30px;
+        margin-top: 20px;
+        border-radius: 8px;
+        border: 1px solid #dbdbdb;
+        padding-left: 6px;
+        background-color: #fafafa;
+      }
+
+      .loginButton {
+        width: 310px;
+        height: 20px;
+        margin-top: 20px;
+        border: none;
+        background-color: aqua;
+        color: white;
+        font-size: 15px;
+        border-radius: 8px;
+        padding-left: 5px;
+        transition: all 0.2s;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.all {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a:hover {
+  color: #366088;
+}
+
+.unactivebtn {
+  width: 310px;
+  height: 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: aqua;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  padding-left: 5px;
+  transition: all 0.2s;
+  opacity: 0.5;
+}
+
+.activebtn {
+  width: 310px;
+  height: 20px;
+  margin-top: 20px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  padding-left: 5px;
+  transition: all 0.2s;
+  opacity: 0.5;
+  background-color: green;
+}
+
+.com {
+  margin: 10px 0 8px 15px;
+  font-size: 12px;
+  font-size: 15px;
+}

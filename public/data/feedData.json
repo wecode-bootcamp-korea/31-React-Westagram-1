@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "userProfileImg": "/images/Noh/couple-1.webp",
+    "userName": "noh__noh_noh",
+    "userLocation": "3시간 전",
+    "content": "굿굿굿",
+    "thumbnail": "/images/Noh/couple-1.webp",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best codin bootcamp!",
+        "replywriterNickname": "노홍철",
+        "replyContent": "안녕하세요 노홍철입니다."
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "replywriterNickname": "유재석",
+        "replyContent": "안녕하세요 유재석입니다."
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "replywriterNickname": "박명수",
+        "replyContent": "안녕하세요 박명수입니다."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userProfileImg": "/images/Noh/couple-1.webp",
+    "thumbnail": "/images/Noh/couple-1.webp",
+    "userName": "noh__noh_noh",
+    "userLocation": "10시간 전",
+    "content": "ㅋㅋ.................................",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best codin bootcamp!",
+        "replywriterNickname": "노홍철",
+        "replyContent": "안녕하세요 노홍철입니다."
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "replywriterNickname": "유재석",
+        "replyContent": "안녕하세요 유재석입니다."
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "replywriterNickname": "박명수",
+        "replyContent": "안녕하세요 박명수입니다."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userProfileImg": "/images/Noh/couple-1.webp",
+    "userName": "noh__noh_noh",
+    "userLocation": "하루 전",
+    "content": "............??????",
+    "thumbnail": "/images/Noh/couple-1.webp",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best codin bootcamp!",
+        "replywriterNickname": "노홍철",
+        "replyContent": "안녕하세요 노홍철입니다."
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "replywriterNickname": "유재석",
+        "replyContent": "안녕하세요 유재석입니다."
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "replywriterNickname": "박명수",
+        "replyContent": "안녕하세요 박명수입니다."
+      }
+    ]
+  }
+]

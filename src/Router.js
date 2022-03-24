@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-//Nav
 import Nav from './components/Nav/Nav';
 
 // Boni
