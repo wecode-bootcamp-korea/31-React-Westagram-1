@@ -5,7 +5,7 @@ const Article = () => {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/feedData.json')
+    fetch('/data/Hyojeong/feedData.json')
       .then(res => res.json())
       .then(data => {
         setFeeds(data);
