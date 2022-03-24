@@ -21,6 +21,7 @@ const Main = () => {
       .then(res => res.json())
       .then(data => setFeeds(data));
   }, []);
+
   return (
     <div className="main">
       <main className="main-wrap">
@@ -33,7 +34,7 @@ const Main = () => {
           <div className="main-right__mystory">
             <div className="main-right__img main-right__img--xl">
               <img
-                alt="mystory-picture"
+                alt="mystory"
                 src="https://avatars.githubusercontent.com/u/56650238?v=4"
               />
             </div>

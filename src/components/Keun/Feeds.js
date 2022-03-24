@@ -16,16 +16,12 @@ function Feeds({ userName }) {
     });
     setComment('');
   };
-
-  {
-    console.log(userName);
-  }
   return (
     <article className="feedscontent">
       <div className="feedscontent__profile">
         <div className="feedscontent__topbar">
           <img
-            alt="myprofile-picture"
+            alt="myprofile"
             src="https://avatars.githubusercontent.com/u/56650238?v=4"
           />
           <span>{userName}</span>
@@ -36,7 +32,7 @@ function Feeds({ userName }) {
       </div>
       <div className="feedscontent__img">
         <img
-          alt="feed-picture"
+          alt="feed"
           src="https://avatars.githubusercontent.com/u/56650238?v=4"
         />
       </div>
