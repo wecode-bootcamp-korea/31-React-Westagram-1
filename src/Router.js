@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-//Nav
-//import Nav from '../components/Nav/Nav/';
+import Nav from './components/Nav/Noh/Nav';
 
 // Boni
 import LoginBoni from './pages/Boni/Login/Login';
@@ -22,7 +20,7 @@ import MainNoh from './pages/Noh/Main/Main';
 const Router = () => {
   return (
     <BrowserRouter>
-      {/* <Nav /> */}
+      <Nav />
       <Routes>
         <Route path="/boni/login" element={<LoginBoni />} />
         <Route path="/boni/main" element={<MainBoni />} />
