@@ -11,9 +11,7 @@ function Feeds({ userName }) {
   let [commentArray, setCommentArray] = useState(['']);
   const handleCommentSubmit = e => {
     e.preventDefault();
-    setCommentArray(commentValue => {
-      return [...commentValue, comment];
-    });
+    setCommentArray(commentValue => [...commentValue, comment]);
     setComment('');
   };
   return (
