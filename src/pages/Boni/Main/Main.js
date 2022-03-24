@@ -9,9 +9,10 @@ function Main() {
   // FIXME: 오타
 
   const postReply = () => {
-    const replyArr = [...postReplyContents];
-    replyArr.push(replyContents);
-    setPostReplyContents(replyArr);
+    const newReplies = [...postReplyContents, replyContents];
+    // FIXME: Array, Object, String, Data suffix
+
+    setPostReplyContents(newReplies);
     setReplyContents('');
     setIsValied(false);
   };
@@ -84,10 +85,8 @@ function Main() {
             </div>
           </div>
           <ul className="reply-list">
-            {postReplyContents.map((item, i) => {
-              return <Reply item={item} key={i} />;
-            })}
-            {/* FIXME: curly bracket 생략 */}
+            {postReplyContents.map((item, i) => <Reply item={item} key={i} />)}
+            {/* FIXME: curly bracket, return 생략 */}
           </ul>
           <div className="feed-footer">
             <input
@@ -105,7 +104,7 @@ function Main() {
             />
             <button
               className={
-                isValied === true
+                isValied
                   ? 'active button-reply'
                   : 'disabled button-reply'
               }

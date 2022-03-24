@@ -7,12 +7,15 @@ function Login() {
   const navigate = useNavigate();
 
   const goToMain = () => {
-    navigate('../boni/main');
+    navigate('/boni/main');
   };
+  // FIXME: 상대경로 => 내 위치에 상대적, 절대경로 prefer
+
   // m1
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // FIXME: state 하나로 합치기, handler 합치기
+  // 관심사에 따라서 state 범위 정하기
 
   const handleIdInput = event => {
     setEmail(event.target.value);
@@ -23,12 +26,20 @@ function Login() {
   };
 
   // m2
-  const [isActive, setIsActive] = useState(false);
-  const isPassedLogin = () => {
-    return email.includes('@') && password.length > 4
-      ? setIsActive(true)
-      : setIsActive(false);
-  };
+  // const [isActive, setIsActive] = useState(false);
+
+
+  const isActive = email.includes('@') && password.length > 4;
+  // valid (email, password)
+  // email, password => state
+  
+  // 1. 부모로부터 props를 통해 전달됩니까? 그러면 확실히 state가 아닙니다.
+  // 2. 시간이 지나도 변하지 않나요? 그러면 확실히 state가 아닙니다.
+  // 3. 컴포넌트 안의 다른 state나 props를 가지고 계산 가능한가요? 그렇다면 state가 아닙니다.
+  //
+  // state change => re-render => UI => component function call => 
+  //
+
   // FIXME: 삼항연산자 사용 안해도 되는 경우
 
   return (
