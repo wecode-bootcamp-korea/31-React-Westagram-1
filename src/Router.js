@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//Nav
-import Nav from './components/Nav/Nav';
-
 // Boni
 import LoginBoni from './pages/Boni/Login/Login';
 import MainBoni from './pages/Boni/Main/Main';
@@ -23,7 +20,6 @@ import MainNoh from './pages/Noh/Main/Main';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/boni/login" element={<LoginBoni />} />
         <Route path="/boni/main" element={<MainBoni />} />
