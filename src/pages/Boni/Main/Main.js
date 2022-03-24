@@ -6,6 +6,7 @@ function Main() {
   const [replyContents, setReplyContents] = useState('');
   const [postReplyContents, setPostReplyContents] = useState([]);
   const [isValied, setIsValied] = useState(false);
+  // FIXME: 오타
 
   const postReply = () => {
     const replyArr = [...postReplyContents];
@@ -14,6 +15,7 @@ function Main() {
     setReplyContents('');
     setIsValied(false);
   };
+  // FIXME: push 안쓰고 한번에 처리
 
   return (
     <main className="lay-main">
@@ -85,6 +87,7 @@ function Main() {
             {postReplyContents.map((item, i) => {
               return <Reply item={item} key={i} />;
             })}
+            {/* FIXME: curly bracket 생략 */}
           </ul>
           <div className="feed-footer">
             <input
@@ -106,6 +109,7 @@ function Main() {
                   ? 'active button-reply'
                   : 'disabled button-reply'
               }
+              {/* FIXME: === 불필요 */}
               onClick={postReply}
             >
               게시
@@ -215,6 +219,7 @@ function Main() {
               </li>
             </ul>
           </div>
+          {/* FIXME: 반복되는 UI -> Array.map 으로 표현 */}
         </div>
         <div className="list-section">
           <div className="list-header">

@@ -12,10 +12,12 @@ function Login() {
   // m1
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // FIXME: state 하나로 합치기, handler 합치기
 
   const handleIdInput = event => {
     setEmail(event.target.value);
   };
+
   const handlePasswordInput = event => {
     setPassword(event.target.value);
   };
@@ -27,6 +29,8 @@ function Login() {
       ? setIsActive(true)
       : setIsActive(false);
   };
+  // FIXME: 삼항연산자 사용 안해도 되는 경우
+
   return (
     <div className="login">
       <div className="login-box">
