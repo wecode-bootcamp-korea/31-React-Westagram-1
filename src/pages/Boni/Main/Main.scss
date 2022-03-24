@@ -1,0 +1,304 @@
+// @import "../../styles/variables.scss";
+// text
+$text-color: #333;
+$text-color-sub: #666;
+
+// border
+$border-color: #dbdbdb;
+$box-border: 1px solid $border-color;
+
+// button
+$button-primary-bg: #3897f0;
+$button-primary-txt: #fff;
+
+@mixin button-primary {
+  background-color: $button-primary-bg;
+  color: $button-primary-txt;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.lay-main {
+  display: flex;
+  padding: 90px 20px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.feeds {
+  max-width: 600px;
+  margin-right: 20px;
+}
+.feed-item {
+  width: 420px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+}
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  .data-id {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .profile-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    margin-right: 4px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .info-wrap {
+    display: inline-block;
+  }
+  .button-option {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+  }
+}
+
+.feed-item {
+  .img-feed {
+    width: 100%;
+  }
+  .button-tool {
+    @at-root .left-area .button-tool {
+      margin-right: 4px;
+    }
+    @at-root .right-area .button-tool {
+      margin-left: 4px;
+    }
+  }
+  .tool-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin: 5px 0;
+  }
+  .profile-wrap {
+    display: inline-block;
+  }
+  .info-like {
+    padding: 0 10px;
+    margin-bottom: 4px;
+    .data-follow-id {
+      font-size: 13px;
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+    .txt {
+      font-size: 13px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .data-like-count {
+      font-size: 13px;
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+    .profile-wrap {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #ededed;
+      box-sizing: border-box;
+      overflow: hidden;
+      vertical-align: middle;
+      margin-right: 4px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .content-wrap {
+    padding: 0 10px;
+    .data-writer-id {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .data-content {
+      display: inline-block;
+      font-size: 13px;
+    }
+    .button-option {
+      display: inline-block;
+      color: #999;
+      cursor: pointer;
+    }
+  }
+  .reply-list {
+    padding: 0 10px;
+  }
+  .feed-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid $border-color;
+    .input-reply {
+      flex: 1;
+      border: 0;
+      outline: none;
+    }
+    .content-wrap {
+      padding: 10px;
+    }
+    .button-reply {
+      color: #3897f0;
+      font-weight: bold;
+      transition: opacity 0.2s;
+      &.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.main-right {
+  max-width: 240px;
+  .user-section {
+    margin-bottom: 10px;
+    .profile-wrap {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 1px solid #e6e6e6;
+      vertical-align: middle;
+      margin-right: 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .info-wrap {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .data-id {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .data-name {
+      font-size: 13px;
+    }
+  }
+  .list-section {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+    .list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+    }
+    .list-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: $text-color-sub;
+    }
+    .button-more {
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .list-body {
+      overflow-y: auto;
+      max-height: 150px;
+    }
+    .profile-wrap {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 1px solid #e6e6e6;
+      vertical-align: middle;
+      margin-right: 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .left-area {
+      white-space: nowrap;
+    }
+    .info-wrap {
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+    .user-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+    }
+    .data-id {
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .data-time {
+      font-size: 13px;
+      color: $text-color-sub;
+    }
+    .data-relative {
+      font-size: 13px;
+      color: $text-color-sub;
+    }
+  }
+  .copyright-section {
+    .copyright-text {
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: $text-color-sub;
+    }
+  }
+}
+
+.icon-button {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &-like {
+    background-image: url(../../../../public/images/Boni/love.png);
+  }
+  &-reply {
+    background-image: url(../../../../public/images/Boni/cmt.png);
+  }
+  &-share {
+    background-image: url(../../../../public/images/Boni/share.png);
+  }
+  &-bookmark {
+    background-image: url(../../../../public/images/Boni/bookmark.png);
+  }
+}
