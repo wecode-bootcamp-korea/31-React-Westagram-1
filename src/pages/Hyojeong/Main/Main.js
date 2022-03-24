@@ -1,7 +1,7 @@
 import React from 'react';
-import Article from './Article';
-import MainRight from './MainRight';
-import './Main.scss';
+import Article from 'pages/Hyojeong/Main/Article';
+import MainRight from 'pages/Hyojeong/Main/MainRight';
+import 'pages/Hyojeong/Main/Main.scss';
 
 const Main = () => {
   return (

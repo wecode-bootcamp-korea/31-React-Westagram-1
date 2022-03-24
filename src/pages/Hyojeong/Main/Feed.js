@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import CommentList from './CommentList';
+import CommentList from 'pages/Hyojeong/Main/CommentList';
 
 const Feed = ({ feed }) => {
   const { userProfileImg, userName, content, thumbnail, commentList } = feed;

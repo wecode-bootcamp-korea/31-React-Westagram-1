@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Feed from './Feed';
+import Feed from 'pages/Hyojeong/Main/Feed';
 
 const Article = () => {
   const [feeds, setFeeds] = useState([]);

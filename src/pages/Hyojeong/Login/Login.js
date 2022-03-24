@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import './Login.scss';
+import 'pages/Hyojeong/Login/Login.scss';
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     if (id.length === 0 || password.length === 0) return;
 
-    // get user's info
+    // // get user's info
     fetch('http://10.58.2.11:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
@@ -38,7 +38,7 @@ const Login = () => {
           localStorage.setItem('wtw-token', result.access_token);
 
           if (window.confirm('로그인 하시겠습니까?')) {
-            navigate('../Hyojeong/main', { replace: false });
+            navigate('pages/Hyojeong/main', { replace: false });
           }
         }
       })

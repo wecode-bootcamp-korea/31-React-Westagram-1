@@ -1,5 +1,5 @@
 import React from 'react';
-import Comment from './Comment';
+import Comment from 'pages/Hyojeong/Main/Comment';
 
 const CommentList = ({ comments, onDelete }) => {
   return (

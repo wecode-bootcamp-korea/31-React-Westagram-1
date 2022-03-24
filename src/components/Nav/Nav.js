@@ -13,7 +13,7 @@ const Nav = () => {
   let isSearchValid = term.length > 0;
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/usersData.json')
+    fetch('/data/usersData.json')
       .then(res => res.json())
       .then(data => setState(state => ({ ...state, users: data })));
   }, []);
