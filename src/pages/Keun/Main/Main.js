@@ -1,5 +1,84 @@
+import React, { useState, useEffect } from 'react';
+import Feed from 'pages/Keun/Main/Feeds/Feed';
+
+import OtherStory from 'pages/Keun/Main/Stories/OtherStory';
+import { INFO_LIST } from 'pages/Keun/Main/Stories/OtherStoryData';
+import RecoStory from 'pages/Keun/Main/Stories/RecoStory';
+import { REFO_LIST } from 'pages/Keun/Main/Stories/RecoStoryData';
+import TitleStory from 'pages/Keun/Main/Stories/TitleStory';
+import { TITLE_LIST } from 'pages/Keun/Main/Stories/TitleStoryData';
+
+//scss
+import './Main.scss';
+
 const Main = () => {
-  return <div>Main</div>;
+  // Feed데이터 불러오기
+  let [feeds, setFeeds] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/Keun/feedsData.json')
+      .then(res => res.json())
+      .then(data => setFeeds(data));
+  }, []);
+
+  return (
+    <div className="main">
+      <main className="main-wrap">
+        <div className="feeds">
+          {feeds.map(feeds => {
+            return <Feed key={feeds.id} userName={feeds.userName} />;
+          })}
+        </div>
+        <main className="main-right">
+          <div className="main-right__mystory">
+            <div className="main-right__img main-right__img--xl">
+              <img
+                alt="mystory"
+                src="https://avatars.githubusercontent.com/u/56650238?v=4"
+              />
+            </div>
+
+            <div className="main-right__text">
+              <h3>wecode_bootcamp</h3>
+              <h3>WeCode | 위코드</h3>
+            </div>
+          </div>
+          <div className="main-right__allstory">
+            <TitleStory
+              title={TITLE_LIST[0].title}
+              subtitle={TITLE_LIST[0].subtitle}
+            />
+
+            {INFO_LIST.map(info => {
+              return (
+                <OtherStory
+                  key={info.id}
+                  infoName={info.name}
+                  infoTime={info.time}
+                />
+              );
+            })}
+          </div>
+
+          <div className="main-right__recommend">
+            <TitleStory
+              title={TITLE_LIST[1].title}
+              subtitle={TITLE_LIST[1].subtitle}
+            />
+            {REFO_LIST.map(reco => {
+              return (
+                <RecoStory
+                  key={reco.id}
+                  recoName={reco.name}
+                  recoFri={reco.fri}
+                />
+              );
+            })}
+          </div>
+        </main>
+      </main>
+    </div>
+  );
 };
 
 export default Main;

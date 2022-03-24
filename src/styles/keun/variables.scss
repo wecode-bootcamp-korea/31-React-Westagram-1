@@ -1,0 +1,8 @@
+// 변수 및 함수지정
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$greyColor: rgba(0, 0, 0, 0.3);
