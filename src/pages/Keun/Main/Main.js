@@ -17,7 +17,7 @@ const Main = () => {
   let [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('/data/feedsData.json')
+    fetch('/data/Keun/feedsData.json')
       .then(res => res.json())
       .then(data => setFeeds(data));
   }, []);
