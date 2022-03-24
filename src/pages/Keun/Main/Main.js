@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Feeds from 'components/Keun/Feeds';
+import Feed from 'pages/Keun/Main/Feeds/Feed';
 
-// components
-import OtherStory from 'components/Keun/OtherStory';
-import { INFO_LIST } from 'components/Keun/OtherStoryData';
-import RecoStory from 'components/Keun/RecoStory';
-import { REFO_LIST } from 'components/Keun/RecoStoryData';
-import TitleStory from 'components/Keun/TitleStory';
-import { TITLE_LIST } from 'components/Keun/TitleStoryData';
+import OtherStory from 'pages/Keun/Main/Stories/OtherStory';
+import { INFO_LIST } from 'pages/Keun/Main/Stories/OtherStoryData';
+import RecoStory from 'pages/Keun/Main/Stories/RecoStory';
+import { REFO_LIST } from 'pages/Keun/Main/Stories/RecoStoryData';
+import TitleStory from 'pages/Keun/Main/Stories/TitleStory';
+import { TITLE_LIST } from 'pages/Keun/Main/Stories/TitleStoryData';
 
 //scss
 import './Main.scss';
@@ -27,7 +26,7 @@ const Main = () => {
       <main className="main-wrap">
         <div className="feeds">
           {feeds.map(feeds => {
-            return <Feeds key={feeds.id} userName={feeds.userName} />;
+            return <Feed key={feeds.id} userName={feeds.userName} />;
           })}
         </div>
         <main className="main-right">

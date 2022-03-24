@@ -11,7 +11,7 @@ const Nav = () => {
   const profileMenu = useRef();
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/usersData.json')
+    fetch('/data/usersData.json')
       .then(res => res.json())
       .then(data => setState(state => (state = { ...state, users: data })));
   }, []);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Comment from './Comment';
 
-function Feeds({ userName }) {
+function Feed({ userName }) {
   let [comment, setComment] = useState('');
 
   const handleCommentInput = e => {
@@ -77,4 +77,4 @@ function Feeds({ userName }) {
   );
 }
 
-export default Feeds;
+export default Feed;
