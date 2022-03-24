@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Feeds from '../../../components/Keun/Feeds';
+import Feeds from 'components/Keun/Feeds';
 
 // components
-import OtherStory from '../../../components/Keun/OtherStory';
-import { INFO_LIST } from '../../../components/Keun/OtherStoryData';
-import RecoStory from '../../../components/Keun/RecoStory';
-import { REFO_LIST } from '../../../components/Keun/RecoStoryData';
-import TitleStory from '../../../components/Keun/TitleStory';
-import { TITLE_LIST } from '../../../components/Keun/TitleStoryData';
+import OtherStory from 'components/Keun/OtherStory';
+import { INFO_LIST } from 'components/Keun/OtherStoryData';
+import RecoStory from 'components/Keun/RecoStory';
+import { REFO_LIST } from 'components/Keun/RecoStoryData';
+import TitleStory from 'components/Keun/TitleStory';
+import { TITLE_LIST } from 'components/Keun/TitleStoryData';
 
 //scss
 import './Main.scss';
