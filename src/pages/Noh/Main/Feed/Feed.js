@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Comment from '../Comment';
 import '../Main.scss';
 
@@ -66,7 +66,11 @@ const Feed = ({ feed }) => {
             <input
               value={comment.content}
               onChange={e => {
-                setComment({ ...comment, content: e.target.value });
+                setComment({
+                  ...comment,
+                  id: userName,
+                  content: e.target.value,
+                });
               }}
               type="text"
               className="inputText"

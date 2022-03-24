@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav/Noh/Nav';
+import Nav from './components/Nav/Nav';
 
 // Boni
 import LoginBoni from './pages/Boni/Login/Login';

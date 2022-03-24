@@ -9,44 +9,14 @@ body {
   height: 100%;
 }
 
-nav {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #ffffff;
-
-    .listlogo {
-      font-family: 'Lobster', cursive;
-      font-size: 40px;
-      padding-bottom: 10px;
-    }
-
-    li {
-      list-style: none;
-      padding: 10px;
-    }
-
-    .listImg {
-      display: flex;
-      flex-direction: row;
-      img {
-        width: 40px;
-        height: 40px;
-      }
-    }
-  }
-}
-
 .center {
   width: 1000px;
+  height: 2000px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: auto;
+  margin-top: 1400px;
   .header {
     border: 1px solid #eaeaea;
     padding: 16px;
@@ -104,10 +74,12 @@ article {
   border: 1px solid #eaeaea;
 }
 aside {
-  display: fixed;
+  display: flex;
   justify-content: center;
-  margin-top: 35px;
-  padding-left: 35px;
+  margin-bottom: 1600px;
+  flex-direction: column;
+  padding-left: 30px;
+
   .side {
     display: flex;
     flex-direction: column;
