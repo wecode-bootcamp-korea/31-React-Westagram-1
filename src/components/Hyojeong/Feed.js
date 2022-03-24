@@ -13,10 +13,23 @@ const Feed = ({ feed }) => {
     content: '',
   });
 
+
   // comment handling - set comments in an array when they are submitted
   const submitComment = e => {
     e.preventDefault();
+    setComments([comment, ...comments]);
     setComments(cur => [comment, ...cur]);
+    // safe
+    // 무조건 최신의 값을 보장
+    // prevState  => function update
+    //
+    //
+    // setState()
+    // setState(value)
+    // setState(function)
+    // setState(function)
+    // args => currentState
+    // newState => function return
 
     //clear comment input
     setComment(cur => ({ ...cur, content: '' }));

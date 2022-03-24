@@ -5,12 +5,13 @@ const Article = () => {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/feedData.json')
+    fetch('/data/feedData.json')
       .then(res => res.json())
       .then(data => {
         setFeeds(data);
       });
   }, []);
+  // FIXME: localhost:3000 생략
 
   return (
     <div className="Article">

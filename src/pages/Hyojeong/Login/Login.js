@@ -9,7 +9,7 @@ const Login = () => {
   });
   const { id, password } = loginInfo;
   const loginForm = useRef();
-  // FIXME: 필요할 때 추가
+  // FIXME: 필요할 때 추가, YAGNI
   const navigate = useNavigate();
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
@@ -41,9 +41,12 @@ const Login = () => {
           }
         }
       })
-      .catch(alert('네트워크 오류입니다.'));
+      .catch(() => alert('네트워크 오류입니다.'));
   };
   // FIXME: catch, then => function argument
+  //
+  //
+  const isInputValueValid = id.length < MNIMUN_LENGTH_OF_ID || password.length < MNIMUN_LENGTH_OF_PW
 
   return (
     <div className="Login">
@@ -65,7 +68,7 @@ const Login = () => {
         />
         <button
           className={
-            id.length < 3 || password.length < 5
+         isInputValueValid
               ? 'login-btn'
               : 'login-btn active'
           }
@@ -79,4 +82,8 @@ const Login = () => {
   );
 };
 
+const MNIMUN_LENGTH_OF_ID = 3;
+const MNIMUN_LENGTH_OF_PW = 5;
+
 export default Login;
+
