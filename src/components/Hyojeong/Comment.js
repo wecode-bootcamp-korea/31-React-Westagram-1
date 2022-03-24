@@ -27,3 +27,4 @@ export default Comment;
 Comment.defaultProps = {
   userName: 'hyodduru',
 };
+// FIXME: 매개변수자리에서 default 값 설정 가능

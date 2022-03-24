@@ -9,6 +9,7 @@ const Login = () => {
   });
   const { id, password } = loginInfo;
   const loginForm = useRef();
+  // FIXME: 필요할 때 추가
   const navigate = useNavigate();
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
@@ -42,6 +43,7 @@ const Login = () => {
       })
       .catch(alert('네트워크 오류입니다.'));
   };
+  // FIXME: catch, then => function argument
 
   return (
     <div className="Login">
@@ -68,6 +70,7 @@ const Login = () => {
               : 'login-btn active'
           }
         >
+          {/* FIXME: 네이밍 붙여주기 */}
           로그인
         </button>
       </form>

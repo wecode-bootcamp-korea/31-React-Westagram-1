@@ -7,6 +7,7 @@ const CommentList = ({ comments, onDelete }) => {
       <ul className="CommentList feed-description user-info">
         {comments.map(comment => {
           const { id, userName, content } = comment;
+          //FIXME: 매개변수 자리에서 구조분해
           return (
             <Comment
               key={id}

@@ -47,7 +47,7 @@ const MainRight = () => {
           </li>
         </ul>
       </div>
-
+      {/* FIXME: 반복되는 UI => Array.map */}
       <div className="sub-container">
         <div className="sub-bar">
           회원님을 위한 추천{' '}
