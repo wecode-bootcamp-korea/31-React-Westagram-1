@@ -12,6 +12,7 @@ const Feed = ({ feed }) => {
     userName: undefined,
     content: '',
   });
+  let isCommentValid = comment.content.length > 0;
 
   // comment handling - set comments in an array when they are submitted
   const submitComment = e => {
@@ -91,11 +92,7 @@ const Feed = ({ feed }) => {
             onChange={handleComment}
           />
           <button
-            className={
-              comment.content.length === 0
-                ? 'comment-btn'
-                : 'comment-btn activate'
-            }
+            className={isCommentValid ? 'comment-btn activate' : 'comment-btn'}
           >
             게시
           </button>

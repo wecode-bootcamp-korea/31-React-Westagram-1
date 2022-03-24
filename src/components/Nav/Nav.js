@@ -10,21 +10,23 @@ const Nav = () => {
   const { users, filteredUsers, term } = state;
   const profileMenu = useRef();
 
+  let isSearchValid = term.length > 0;
+
   useEffect(() => {
     fetch('http://localhost:3000/data/usersData.json')
       .then(res => res.json())
-      .then(data => setState(state => (state = { ...state, users: data })));
+      .then(data => setState(state => ({ ...state, users: data })));
   }, []);
 
   const handleState = e => {
     const { value, name } = e.target;
     // filtered : filtered array - search user's id
     const filtered = users.filter(user => user.id.includes(value));
-    setState({
-      ...state,
+    setState(cur => ({
+      ...cur,
       [name]: value,
       filteredUsers: value === '' ? [] : filtered,
-    });
+    }));
   };
 
   const showProfileIcon = () => {
@@ -50,9 +52,7 @@ const Nav = () => {
           onChange={handleState}
         />
         <i
-          className={
-            term.length > 0 ? 'fas fa-search activate' : 'fas fa-search'
-          }
+          className={isSearchValid ? 'fas fa-search activate' : 'fas fa-search'}
         />
         <ul className="users search-info">
           {filteredUsers.map((user, i) => {

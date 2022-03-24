@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import './Login.scss';
 
@@ -8,12 +8,14 @@ const Login = () => {
     password: '',
   });
   const { id, password } = loginInfo;
-  const loginForm = useRef();
+  let isLoginInfoValid = id.length >= 3 && password.length >= 5;
+
   const navigate = useNavigate();
+
   // Login Handling - set user's id & password
   const handleLoginInfo = e => {
     const { name, value } = e.target;
-    setLoginInfo({ ...loginInfo, [name]: value });
+    setLoginInfo(cur => ({ ...cur, [name]: value }));
   };
 
   // Login Handling - go to the main page when logged in
@@ -40,13 +42,13 @@ const Login = () => {
           }
         }
       })
-      .catch(alert('네트워크 오류입니다.'));
+      .catch(() => alert('네트워크 오류입니다.'));
   };
 
   return (
     <div className="Login">
       <h1>Westagram</h1>
-      <form ref={loginForm} className="login-form" onSubmit={submitLoginInfo}>
+      <form className="login-form" onSubmit={submitLoginInfo}>
         <input
           name="id"
           value={id}
@@ -61,13 +63,7 @@ const Login = () => {
           placeholder="비밀번호"
           onChange={handleLoginInfo}
         />
-        <button
-          className={
-            id.length < 3 || password.length < 5
-              ? 'login-btn'
-              : 'login-btn active'
-          }
-        >
+        <button className={isLoginInfoValid ? 'login-btn active' : 'login-btn'}>
           로그인
         </button>
       </form>

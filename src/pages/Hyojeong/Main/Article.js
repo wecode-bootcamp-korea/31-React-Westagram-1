@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Feed from '../../../components/Hyojeong/Feed';
+import Feed from './Feed';
 
 const Article = () => {
   const [feeds, setFeeds] = useState([]);
@@ -7,9 +7,7 @@ const Article = () => {
   useEffect(() => {
     fetch('/data/Hyojeong/feedData.json')
       .then(res => res.json())
-      .then(data => {
-        setFeeds(data);
-      });
+      .then(data => setFeeds(data));
   }, []);
 
   return (
