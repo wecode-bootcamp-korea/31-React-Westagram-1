@@ -19,11 +19,9 @@ const Login = () => {
 
   // 유효성 검토
   let [isActive, isActiveChange] = useState(false);
-
-  const checkValid = e => {
-    inputs.id.includes('@') && inputs.pw.length >= 5
-      ? isActiveChange(true)
-      : isActiveChange(false);
+  const isPassedLogin = () => {
+    const checkValid = inputs.id.includes('@') && inputs.pw.length >= 5;
+    isActiveChange(checkValid);
   };
 
   // 로그인 인증 인가 후 fetch
@@ -51,7 +49,7 @@ const Login = () => {
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           onChange={handleInputs}
-          onKeyUp={checkValid}
+          onKeyUp={isPassedLogin}
           value={inputs.id}
         />
         <input
@@ -60,9 +58,10 @@ const Login = () => {
           type="password"
           placeholder="비밀번호"
           onChange={handleInputs}
-          onKeyUp={checkValid}
+          onKeyUp={isPassedLogin}
           value={inputs.pw}
         />
+
         <button
           className={isActive ? 'active' : null}
           type="button"
