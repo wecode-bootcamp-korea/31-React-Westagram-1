@@ -4,10 +4,9 @@ import './Nav.scss';
 const Nav = () => {
   const [state, setState] = useState({
     users: [],
-    filteredUsers: [],
     term: '',
   });
-  const { users, filteredUsers, term } = state;
+  const { users, term } = state;
   const profileMenu = useRef();
 
   let isSearchValid = term.length > 0;
@@ -20,13 +19,16 @@ const Nav = () => {
 
   const handleState = e => {
     const { value, name } = e.target;
-    // filtered : filtered array - search user's id
-    const filtered = users.filter(user => user.id.includes(value));
+
     setState(cur => ({
       ...cur,
       [name]: value,
-      filteredUsers: value === '' ? [] : filtered,
     }));
+  };
+
+  // filtered : filtered array - search user's id
+  const filtered = () => {
+    return term === '' ? [] : users.filter(user => user.id.includes(term));
   };
 
   const showProfileIcon = () => {
@@ -55,7 +57,7 @@ const Nav = () => {
           className={isSearchValid ? 'fas fa-search activate' : 'fas fa-search'}
         />
         <ul className="users search-info">
-          {filteredUsers.map((user, i) => {
+          {filtered().map((user, i) => {
             const { img, id, name } = user;
             return (
               <li key={i} className="user">
