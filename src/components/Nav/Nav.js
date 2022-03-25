@@ -4,27 +4,31 @@ import './Nav.scss';
 const Nav = () => {
   const [state, setState] = useState({
     users: [],
-    filteredUsers: [],
     term: '',
   });
-  const { users, filteredUsers, term } = state;
+  const { users, term } = state;
   const profileMenu = useRef();
 
+  let isSearchValid = term.length > 0;
+
   useEffect(() => {
-    fetch('http://localhost:3000/data/usersData.json')
+    fetch('/data/usersData.json')
       .then(res => res.json())
-      .then(data => setState(state => (state = { ...state, users: data })));
+      .then(data => setState(state => ({ ...state, users: data })));
   }, []);
 
   const handleState = e => {
     const { value, name } = e.target;
-    // filtered : filtered array - search user's id
-    const filtered = users.filter(user => user.id.includes(value));
-    setState({
-      ...state,
+
+    setState(cur => ({
+      ...cur,
       [name]: value,
-      filteredUsers: value === '' ? [] : filtered,
-    });
+    }));
+  };
+
+  // filtered : filtered array - search user's id
+  const filtered = () => {
+    return term === '' ? [] : users.filter(user => user.id.includes(term));
   };
 
   const showProfileIcon = () => {
@@ -50,12 +54,10 @@ const Nav = () => {
           onChange={handleState}
         />
         <i
-          className={
-            term.length > 0 ? 'fas fa-search activate' : 'fas fa-search'
-          }
+          className={isSearchValid ? 'fas fa-search activate' : 'fas fa-search'}
         />
         <ul className="users search-info">
-          {filteredUsers.map((user, i) => {
+          {filtered().map((user, i) => {
             const { img, id, name } = user;
             return (
               <li key={i} className="user">

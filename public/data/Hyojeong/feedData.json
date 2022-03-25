@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "userProfileImg": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "userName": "Happy_day",
+    "content": "What a glory day🌼",
+    "thumbnail": "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userProfileImg": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80",
+    "userName": "joonsikyang",
+    "content": "Hi there.",
+    "thumbnail": "https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1415&q=80",
+
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "sally_world",
+        "content": "희희 싄나나나나!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Yeahhhhhhhhhh",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userProfileImg": "https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "userName": "jayPark",
+    "content": "the SKY",
+    "thumbnail": "https://images.unsplash.com/photo-1618672853783-a85ce33df16c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1475&q=80",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "we___together",
+        "content": "예쁘다아아ㅏ아!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joons_1234",
+        "content": "나도 갈래~~",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.Hey ~~~~~",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "userProfileImg": "https://images.unsplash.com/photo-1507835661088-ac1e84fe645f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1562&q=80",
+    "userName": "Sally",
+    "content": "홀로 작업중 ✒️",
+    "thumbnail": "https://images.unsplash.com/photo-1553171403-619f44bdb0aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2188&q=80",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "we_healing",
+        "content": "웁스바리~~ 나도가고싶다 ㅠ",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "gggelfysag",
+        "content": "멋지다👍",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userProfileImg": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/14502788_309919656067277_8807121396242408041_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=euMvF-3OBWAAX8hcVLR&_nc_ht=scontent-ssn1-1.xx&oh=00_AT_lHnLv89boi30F5Nbgn9axgP6YDrxq7sMmH3Gphnq_IA&oe=625EB063",
+    "userName": "보노보노",
+    "content": "포로리야",
+    "thumbnail": "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.18169-9/14502788_309919656067277_8807121396242408041_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=euMvF-3OBWAAX8hcVLR&_nc_ht=scontent-ssn1-1.xx&oh=00_AT_lHnLv89boi30F5Nbgn9axgP6YDrxq7sMmH3Gphnq_IA&oe=625EB063",
+
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "locingMy_12",
+        "content": "❤️❤️❤️❤️❤️❤️",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "hyoJin725",
+        "content": "귀여워 ㅠㅠㅠ",
+        "isLiked": false
+      }
+    ]
+  }
+]

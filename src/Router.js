@@ -1,23 +1,24 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//Nav
-import Nav from './components/Nav/Nav';
+// Nav
+import Nav from 'components/Nav/Nav';
 
 // Boni
-import LoginBoni from './pages/Boni/Login/Login';
-import MainBoni from './pages/Boni/Main/Main';
+import LoginBoni from 'pages/Boni/Login/Login';
+import MainBoni from 'pages/Boni/Main/Main';
 
 //Hyojeong
-import LoginHyojeong from './pages/Hyojeong/Login/Login';
-import MainHyojeong from './pages/Hyojeong/Main/Main';
+import LoginHyojeong from 'pages/Hyojeong/Login/Login';
+import MainHyojeong from 'pages/Hyojeong/Main/Main';
 
 //Keun
-import LoginKeun from './pages/Keun/Login/Login';
-import MainKeun from './pages/Keun/Main/Main';
+import LoginKeun from 'pages/Keun/Login/Login';
+import MainKeun from 'pages/Keun/Main/Main';
 
 //Noh
-import LoginNoh from './pages/Noh/Login/Login';
-import MainNoh from './pages/Noh/Main/Main';
+import LoginNoh from 'pages/Noh/Login/Login';
+import MainNoh from 'pages/Noh/Main/Main';
 
 const Router = () => {
   return (
